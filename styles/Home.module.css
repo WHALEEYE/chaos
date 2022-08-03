@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  background-color: #111111;
 }
 
 .main {
@@ -43,6 +44,14 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: #dedede;
+}
+
+.subtitle{
+  margin: 0;
+  line-height: 3;
+  font-size: 1rem;
+  color: #ababab;
 }
 
 .title,

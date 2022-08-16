@@ -47,7 +47,7 @@
   color: #dedede;
 }
 
-.subtitle{
+.subtitle {
   margin: 0;
   line-height: 3;
   font-size: 1rem;
@@ -71,7 +71,7 @@
   padding: 0.75rem;
   font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -129,9 +129,11 @@
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }

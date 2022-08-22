@@ -9,7 +9,7 @@ const Home: NextPage = () => {
             <Head>
                 <title>Chaos</title>
                 <meta name="description" content="The end of the universe in my mind"/>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="icon" href="/favicon.svg"/>
             </Head>
 
             <main className={styles.main}>

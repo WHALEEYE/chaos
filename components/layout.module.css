@@ -13,3 +13,18 @@
 .backToHome {
     margin: 3rem 0 0;
 }
+
+.cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    outline: 0;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgb(0, 0, 0);
+    filter: alpha(opacity=60);
+    background-color: rgba(0, 0, 0, 0.93);
+    z-index: 9999;
+}

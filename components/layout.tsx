@@ -15,13 +15,14 @@ export default function Layout({children, home}: {
     children: ReactNode, home?: boolean
 }) {
     return (
-        <div className={styles.container}>
+        <div className={"grid gap-10"}>
             <Head>
                 <link rel="icon" href="/favicon.svg"/>
                 <meta
                     name="description"
                     content="Isaac Jin's personal blog"
                 />
+                {/* TODO: update og image after the repo is public */}
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(
@@ -31,63 +32,81 @@ export default function Layout({children, home}: {
                 <meta name="og:title" content={siteTitle}/>
                 <meta name="twitter:card" content="summary_large_image"/>
             </Head>
-            <header className={styles.header}>
-                {home ? (
-                    <>
-                        <Image
-                            priority
-                            src="/images/profile.jpg"
-                            className={utilStyles.borderCircle}
-                            height={144}
-                            width={144}
-                            alt={name}
-                        />
-                        <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                    </>
-                ) : (
-                    <>
-                        <Link href="/">
-                            <a>
-                                <Image
-                                    priority
-                                    src="/images/profile.jpg"
-                                    className={utilStyles.borderCircle}
-                                    height={108}
-                                    width={108}
-                                    alt={name}
-                                />
-                            </a>
-                        </Link>
-                        <h2 className={utilStyles.headingLg}>
+
+            <div className="inset-x-0 top-0 h-20 text-center bg-black flex">
+                <Image src={"/og-fav.svg"} height={80} width={80} alt={"The core of Chaos"}></Image>
+            </div>
+
+            <div className={"ml-80 mr-80"}>
+                <header className={styles.header}>
+                    {home ? (
+                        <>
+                            <Image
+                                priority
+                                src="/images/profile.jpg"
+                                className={utilStyles.borderCircle}
+                                height={144}
+                                width={144}
+                                alt={name}
+                            />
+                            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+                        </>
+                    ) : (
+                        <>
                             <Link href="/">
-                                <a className={utilStyles.colorInherit}>{name}</a>
+                                <a>
+                                    <Image
+                                        priority
+                                        src="/images/profile.jpg"
+                                        className={utilStyles.borderCircle}
+                                        height={108}
+                                        width={108}
+                                        alt={name}
+                                    />
+                                </a>
                             </Link>
-                        </h2>
-                    </>
+                            <h2 className={utilStyles.headingLg}>
+                                <Link href="/">
+                                    <a className={utilStyles.colorInherit}>{name}</a>
+                                </Link>
+                            </h2>
+                        </>
+                    )}
+                </header>
+
+                <main>{children}</main>
+
+                {!home && (
+                    <div className={styles.backToHome}>
+                        <Link href="/">
+                            <a>← Back to home</a>
+                        </Link>
+                    </div>
                 )}
-            </header>
-            <main>{children}</main>
-            {!home && (
-                <div className={styles.backToHome}>
-                    <Link href="/">
-                        <a>← Back to home</a>
-                    </Link>
+            </div>
+
+
+            {/* TODO: delete this part of code when the blog is finished */}
+            {!isDev && (<div className={"grid z-20 opacity-95 bg-black absolute inset-x-0 inset-y-0 p-20 gap-y-15"}>
+                <div>
+                    <h1 className={utilStyles.title}>
+                        Welcome to Chaos.
+                    </h1>
+
+                    <h1 className={utilStyles.subtitle}>The End of My Cosmic Mind</h1>
                 </div>
-            )}
 
-            {!isDev && (<div className={utilStyles.cover}>
-                <h1 className={utilStyles.title}>
-                    Welcome to Chaos.
-                </h1>
 
-                <h1 className={utilStyles.subtitle}>The End of My Cosmic Mind</h1>
+                <div>
+                    <Script src={"https://cdn.logwork.com/widget/countdown.js"} strategy={"afterInteractive"}></Script>
+                    <a href="https://logwork.com/countdown-79iv" className="countdown-timer" data-style="circles"
+                       data-date="2022-09-07 23:59" data-background="#00f9ee"
+                       data-unitscolor="#ababab"
+                       data-textcolor="#ababab">Open In</a>
+                </div>
 
-                <Script src={"https://cdn.logwork.com/widget/countdown.js"} strategy={"afterInteractive"}></Script>
-                <a href="https://logwork.com/countdown-79iv" className="countdown-timer" data-style="circles"
-                   data-date="2022-09-07 23:59" data-background="#00f9ee"
-                   data-unitscolor="#ababab"
-                   data-textcolor="#ababab">Open In</a>
             </div>)}
+
         </div>
     );
 }

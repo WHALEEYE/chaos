@@ -1,32 +1,54 @@
-import type {NextPage} from 'next'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Script from "next/script";
+import Layout, {siteTitle} from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
+import {getSortedPostsData} from '../lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
+import {GetStaticProps} from 'next'
 
-const Home: NextPage = () => {
+export default function Home({allPostsData}: {
+    allPostsData: {
+        date: string
+        title: string
+        id: string
+    }[]
+}) {
     return (
-        <div className={styles.container}>
+        <Layout home>
             <Head>
-                <title>Chaos</title>
-                <meta name="description" content="The end of the universe in my mind"/>
-                <link rel="icon" href="/favicon.svg"/>
+                <title>{siteTitle}</title>
             </Head>
+            <section className={utilStyles.headingMd}>
+                <p>{"Hello, welcome to Chaos. I'm Isaac Jin, an undergraduate student in SUSTech. This semester I'm visiting University of Wisconsin - Madison."}</p>
+            </section>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    Welcome to Chaos.
-                </h1>
-
-                <h1 className={styles.subtitle}>The End of My Cosmic Mind</h1>
-
-                <Script src={"https://cdn.logwork.com/widget/countdown.js"} strategy={"afterInteractive"}></Script>
-                <a href="https://logwork.com/countdown-79iv" className="countdown-timer" data-style="circles"
-                   data-date="2022-09-07 23:59" data-background="#00f9ee"
-                   data-unitscolor="#ababab"
-                   data-textcolor="#ababab">Open In</a>
-            </main>
-        </div>
+            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+                <h2 className={utilStyles.headingLg}>Blog</h2>
+                <ul className={utilStyles.list}>
+                    {allPostsData.map(({id, date, title}) => (
+                        <li className={utilStyles.listItem} key={id}>
+                            <Link href={`/posts/${id}`}>
+                                <a>{title}</a>
+                            </Link>
+                            <br/>
+                            <small className={utilStyles.lightText}>
+                                <Date dateString={date}/>
+                            </small>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </Layout>
     )
 }
 
-export default Home
+export const getStaticProps: GetStaticProps = async () => {
+    const allPostsData = getSortedPostsData()
+    return {
+        props: {
+            allPostsData
+        }
+    }
+}
+
+

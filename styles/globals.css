@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    /* revert the style of the list */
+    ul {
+        list-style-type: disc;
+        margin: revert;
+        padding: revert;
+    }
+
+    /* revert the style of the paragraphs */
+    p {
+        margin: revert;
+    }
+}
+
 html,
 body {
     padding: 0;

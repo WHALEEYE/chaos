@@ -33,11 +33,19 @@ export default function Layout({children, home}: {
                 <meta name="twitter:card" content="summary_large_image"/>
             </Head>
 
-            <div className="inset-x-0 top-0 h-20 text-center bg-black flex">
-                <Image src={"/og-fav.svg"} height={80} width={80} alt={"The core of Chaos"}></Image>
+            <div className="h-16 inset-x-0"></div>
+
+            {/* navigator bar */}
+            <div className="fixed h-16 inset-x-0 text-center flex justify-end gap-2 py-3.5 px-2 z-10 backdrop-blur-sm bg-white/30 drop-shadow-md">
+                <div className={"basis-24 text-xl font-semibold"}>Blogs</div>
+                <div className={"basis-24 text-xl font-semibold"}>Talks</div>
+                <div className={"basis-24 text-xl font-semibold"}>Friends</div>
             </div>
 
-            <div className={"ml-80 mr-80"}>
+            {/* background */}
+            <div className={"blur-sm bg-contain bg-center bg-local absolute inset-0 opacity-5 -z-10"} style={{backgroundImage: "url(/favicon.svg)"}}></div>
+
+            <div className={"mx-72"}>
                 <header className={styles.header}>
                     {home ? (
                         <>
@@ -87,7 +95,7 @@ export default function Layout({children, home}: {
 
 
             {/* TODO: delete this part of code when the blog is finished */}
-            {!isDev && (<div className={"grid z-20 opacity-95 bg-black absolute inset-x-0 inset-y-0 p-20 gap-y-15"}>
+            {!isDev && (<div className={"grid z-20 opacity-95 bg-black absolute inset-0 p-20 gap-y-15"}>
                 <div>
                     <h1 className={utilStyles.title}>
                         Welcome to Chaos.

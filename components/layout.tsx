@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import React, {ReactNode} from "react";
 import Script from "next/script";
 
-const name = 'Isaac Jin';
+export const name = 'Isaac Jin';
 export const siteTitle = 'Chaos';
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -33,64 +32,40 @@ export default function Layout({children, home}: {
                 <meta name="twitter:card" content="summary_large_image"/>
             </Head>
 
-            <div className="h-16 inset-x-0"></div>
-
             {/* navigator bar */}
-            <div className="fixed h-16 inset-x-0 text-center flex justify-end gap-2 py-3.5 px-2 z-10 backdrop-blur-sm bg-white/30 drop-shadow-md">
-                <div className={"basis-24 text-xl font-semibold"}>Blogs</div>
-                <div className={"basis-24 text-xl font-semibold"}>Talks</div>
-                <div className={"basis-24 text-xl font-semibold"}>Friends</div>
+            <div
+                className="items-center select-none fixed h-10 inset-x-0 px-[5%] flex justify-end z-10 gap-10 backdrop-blur-lg border-b border-gray-700/20">
+                <div className={"flex-grow justify-items-start flex items-center"}>
+                    <Link href={"/"}>
+                        <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
+                            <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
+                            <div className={"font-extrabold text-2xl"}>Chaos</div>
+                        </div>
+                    </Link>
+                </div>
+                <div className={"flex flex-none"}>
+                    <Link href={"/"}>
+                        <div className={"navi-unselected hover:navi-selected"}>Blogs</div>
+                    </Link>
+                    <Link href={"/"}>
+                        <div className={"navi-unselected hover:navi-selected"}>Talks</div>
+                    </Link>
+                    <Link href={"/"}>
+                        <div className={"navi-unselected hover:navi-selected"}>Friends</div>
+                    </Link>
+                </div>
+                <div className={"flex-none flex gap-4"}>
+                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"} alt={"night"}></Image>
+                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"} alt={"night"}></Image>
+                </div>
             </div>
 
             {/* background */}
-            <div className={"blur-sm bg-contain bg-center bg-local absolute inset-0 opacity-5 -z-10"} style={{backgroundImage: "url(/favicon.svg)"}}></div>
+            <div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}
+                 style={{backgroundImage: "url(/favicon.svg)"}}></div>
 
-            <div className={"mx-72"}>
-                <header className={styles.header}>
-                    {home ? (
-                        <>
-                            <Image
-                                priority
-                                src="/images/profile.jpg"
-                                className={utilStyles.borderCircle}
-                                height={144}
-                                width={144}
-                                alt={name}
-                            />
-                            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                        </>
-                    ) : (
-                        <>
-                            <Link href="/">
-                                <a>
-                                    <Image
-                                        priority
-                                        src="/images/profile.jpg"
-                                        className={utilStyles.borderCircle}
-                                        height={108}
-                                        width={108}
-                                        alt={name}
-                                    />
-                                </a>
-                            </Link>
-                            <h2 className={utilStyles.headingLg}>
-                                <Link href="/">
-                                    <a className={utilStyles.colorInherit}>{name}</a>
-                                </Link>
-                            </h2>
-                        </>
-                    )}
-                </header>
-
+            <div className={"mt-20"}>
                 <main>{children}</main>
-
-                {!home && (
-                    <div className={styles.backToHome}>
-                        <Link href="/">
-                            <a>← Back to home</a>
-                        </Link>
-                    </div>
-                )}
             </div>
 
 

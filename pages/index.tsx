@@ -5,7 +5,6 @@ import {getSortedPostsData} from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import {GetStaticProps} from 'next'
-import styles from "../components/layout.module.css";
 import Image from "next/image";
 import React from "react";
 
@@ -21,9 +20,9 @@ export default function Home({allPostsData}: {
             <Head>
                 <title>{siteTitle}</title>
             </Head>
-            <div className={"grid-cols-3 mx-[5%] grid gap-3 justify-items-start"}>
+            <div className={"grid-cols-4 px-[12%] grid gap-3 justify-items-start"}>
                 {/* Personal Profile on Left */}
-                <div className={"grid gap-6"}>
+                <div className={"grid col-span-1 gap-y-8 mt-[18px]"}>
                     <div>
                         <Image
                             priority
@@ -33,43 +32,61 @@ export default function Home({allPostsData}: {
                             width={144}
                             alt={name}
                         />
+                        <h1 className={"text-3xl font-extrabold justify-self-center"}>{name}</h1>
                     </div>
 
-                    <div>
-                        <h1 className={"text-4xl font-extrabold justify-self-center"}>{name}</h1>
-                    </div>
+                    <div>Researching on <b>System Security</b> and <b>Network Security</b></div>
 
-                    <div className={"grid gap-4"}>
+                    <div className={"grid gap-3"}>
                         <div className={"grid"}>
                             <div><b>Undergraduate</b> student of <br/><b>Southern University of Science and
                                 Technology</b></div>
-                            <div className={"text-gray-500"}><b>2019.9</b> to <b>Present</b></div>
+                            <div className={"text-gray-400 text-sm"}><b>2019.9</b> to <b>Present</b></div>
                         </div>
                         <div>
                             <div><b>Visiting</b> student of <br/><b>University of Wisconsin - Madison</b></div>
-                            <div className={"text-gray-500"}><b>2022.9</b> to <b>Present</b></div>
-
+                            <div className={"text-gray-400 text-sm"}><b>2022.9</b> to <b>Present</b></div>
                         </div>
                     </div>
 
                 </div>
-                <div className={"col-span-2"}>
-                        <h2 className={"text-2xl"}>Blogs</h2>
-                        <ul className={utilStyles.list}>
-                            {allPostsData.map(({id, date, title}) => (
-                                <li className={utilStyles.listItem} key={id}>
-                                    <Link href={`/posts/${id}`}>
-                                        <a>{title}</a>
-                                    </Link>
-                                    <br/>
-                                    <small className={utilStyles.lightText}>
-                                        <Date dateString={date}/>
-                                    </small>
-                                </li>
-                            ))}
-                        </ul>
-                </div>
 
+                {/* Brief information on the right */}
+                <div className={"grid col-span-3 ml-20 gap-y-4"}>
+                    {/* bios */}
+                    <div className={"leading-normal"}>
+                        <p>Hello there! Welcome to CHAOS, my personal blog.</p>
+                        <p>The articles about academic and technical topics will be collected in <Link href={"/"}><span
+                            className={"link-ina"}>blogs</span></Link>, and those about casual, miscellaneous topics can
+                            be seen in <Link href={"/"}><span className={"link-ina"}>murmurs</span></Link>. Feel free to
+                            take a look at them.</p>
+                        <p>You can see my CV <Link href={"/"}><span className={"link-ina"}>here</span></Link> if
+                            interested.</p>
+                        <p>Have a good time! =)</p>
+                    </div>
+                    {/* Latest */}
+                    <div className={"grid gap-4"}>
+                        {/* latest blogs */}
+                        <div>
+                            <div className={"text-2xl font-black mb-3"}>Latest Blogs</div>
+                            <div className={"grid gap-3"}>
+                                {allPostsData.map(({id, date, title}) => (
+                                    <div className={"list-none leading-relaxed"} key={id}>
+                                        <Link href={`/posts/${id}`}>
+                                            <span className={"link-ina"}>{title}</span>
+                                        </Link>
+                                        <br/>
+                                        <small className={utilStyles.lightText}>
+                                            <Date dateString={date}/>
+                                        </small>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className={"text-2xl font-black"}>Latest Murmurs</div>
+                    </div>
+                </div>
 
             </div>
         </Layout>

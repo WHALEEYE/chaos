@@ -24,6 +24,10 @@
     .navi-unselected {
         @apply font-normal py-2 px-4 cursor-pointer
     }
+
+    .link-ina {
+        @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
+    }
 }
 
 html,

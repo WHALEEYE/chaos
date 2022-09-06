@@ -6,7 +6,7 @@ import React, {ReactNode} from "react";
 import Script from "next/script";
 
 export const name = 'Isaac Jin';
-export const siteTitle = 'Chaos';
+export const siteTitle = 'CHAOS';
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -34,12 +34,12 @@ export default function Layout({children, home}: {
 
             {/* navigator bar */}
             <div
-                className="items-center select-none fixed h-10 inset-x-0 px-[5%] flex justify-end z-10 gap-10 backdrop-blur-lg border-b border-gray-700/20">
+                className="px-[12%] items-center select-none fixed h-10 inset-x-0 flex justify-end z-10 gap-10 backdrop-blur-lg border-b border-gray-700/20">
                 <div className={"flex-grow justify-items-start flex items-center"}>
                     <Link href={"/"}>
                         <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
                             <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
-                            <div className={"font-extrabold text-2xl"}>Chaos</div>
+                            <div className={"font-extrabold text-2xl"}>{siteTitle}</div>
                         </div>
                     </Link>
                 </div>
@@ -48,7 +48,7 @@ export default function Layout({children, home}: {
                         <div className={"navi-unselected hover:navi-selected"}>Blogs</div>
                     </Link>
                     <Link href={"/"}>
-                        <div className={"navi-unselected hover:navi-selected"}>Talks</div>
+                        <div className={"navi-unselected hover:navi-selected"}>Murmurs</div>
                     </Link>
                     <Link href={"/"}>
                         <div className={"navi-unselected hover:navi-selected"}>Friends</div>

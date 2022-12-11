@@ -83,7 +83,7 @@ export default function Layout({children, home}: {
                 <div>
                     <Script src={"https://cdn.logwork.com/widget/countdown.js"} strategy={"afterInteractive"}></Script>
                     <a href="https://logwork.com/countdown-79iv" className="countdown-timer" data-style="circles"
-                       data-date="2022-09-07 23:59" data-background="#00f9ee"
+                       data-date="2023-02-01 23:59" data-background="#00f9ee"
                        data-unitscolor="#ababab"
                        data-textcolor="#ababab">Open In</a>
                 </div>

@@ -4,6 +4,7 @@ import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css"
 import {GetStaticPaths, GetStaticProps} from "next";
+import {sectionName} from "./index"
 
 export default function Post({postData}: {
     postData: {
@@ -30,7 +31,7 @@ export default function Post({postData}: {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = getAllPostIds();
+    const paths = getAllPostIds(sectionName);
     return {
         paths, fallback: false,
     };
@@ -38,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-    const postData = await getPostData(params?.id as string)
+    const postData = await getPostData(sectionName, params?.id as string)
     return {
         props: {
             postData,

@@ -10,9 +10,27 @@ export const siteTitle = 'CHAOS';
 
 const isDev = process.env.NODE_ENV === 'development'
 
-export default function Layout({children, home}: {
-    children: ReactNode, home?: boolean
+export default function Layout({children, section}: {
+    children: ReactNode, section?: string
 }) {
+    const articleButton = (section === "articles") ?
+        <div className={"navi-selected"}>Articles</div> :
+        <Link href={"/articles"}>
+            <div className={"navi-unselected hover:navi-selected"}>Articles</div>
+        </Link>
+
+    const talkButton = (section === "talks") ?
+        <div className={"navi-selected"}>Talks</div> :
+        <Link href={"/talks"}>
+            <div className={"navi-unselected hover:navi-selected"}>Talks</div>
+        </Link>
+
+    const friendButton = (section === "friends") ?
+        <div className={"navi-selected"}>Friends</div> :
+        <Link href={"/friends"}>
+            <div className={"navi-unselected hover:navi-selected"}>Friends</div>
+        </Link>
+
     return (
         <div className={"grid gap-10"}>
             <Head>
@@ -44,19 +62,15 @@ export default function Layout({children, home}: {
                     </Link>
                 </div>
                 <div className={"flex flex-none"}>
-                    <Link href={"/"}>
-                        <div className={"navi-unselected hover:navi-selected"}>Blogs</div>
-                    </Link>
-                    <Link href={"/"}>
-                        <div className={"navi-unselected hover:navi-selected"}>Murmurs</div>
-                    </Link>
-                    <Link href={"/"}>
-                        <div className={"navi-unselected hover:navi-selected"}>Friends</div>
-                    </Link>
+                    {articleButton}
+                    {talkButton}
+                    {friendButton}
                 </div>
                 <div className={"flex-none flex gap-4"}>
-                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"} alt={"night"}></Image>
-                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"} alt={"night"}></Image>
+                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}
+                           alt={"night"}></Image>
+                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}
+                           alt={"night"}></Image>
                 </div>
             </div>
 
@@ -64,7 +78,7 @@ export default function Layout({children, home}: {
             <div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}
                  style={{backgroundImage: "url(/favicon.svg)"}}></div>
 
-            <div className={"mt-20"}>
+            <div className={"mt-20 px-[12%]"}>
                 <main>{children}</main>
             </div>
 
@@ -93,4 +107,3 @@ export default function Layout({children, home}: {
         </div>
     );
 }
-

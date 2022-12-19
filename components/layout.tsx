@@ -13,6 +13,13 @@ const isDev = process.env.NODE_ENV === 'development'
 export default function Layout({children, section}: {
     children: ReactNode, section?: string
 }) {
+
+    const profileButton = (section === "profile") ?
+        <div className={"navi-selected"}>Profile</div> :
+        <Link href={"/profile"}>
+            <div className={"navi-unselected hover:navi-selected"}>Profile</div>
+        </Link>
+
     const articleButton = (section === "articles") ?
         <div className={"navi-selected"}>Articles</div> :
         <Link href={"/articles"}>
@@ -52,34 +59,109 @@ export default function Layout({children, section}: {
 
             {/* navigator bar */}
             <div
-                className="px-[12%] items-center select-none fixed h-10 inset-x-0 flex justify-end z-10 gap-10 backdrop-blur-lg border-b border-gray-700/20">
-                <div className={"flex-grow justify-items-start flex items-center"}>
-                    <Link href={"/"}>
-                        <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
-                            <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
-                            <div className={"font-extrabold text-2xl"}>{siteTitle}</div>
-                        </div>
-                    </Link>
+                className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center"}>
+                <div className={"flex justify-end grow max-w-[1080px]"}>
+                    <div className={"flex items-center grow align-self-start"}>
+                        <Link href={"/"}>
+                            <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
+                                <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
+                                <div className={"font-extrabold text-2xl"}>{siteTitle}</div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className={"flex flex-none"}>
+                        {profileButton}
+                        {articleButton}
+                        {talkButton}
+                        {friendButton}
+                    </div>
+                    {/* TODO: Night Mode */}
+                    {/*<div className={"flex-none flex gap-4"}>*/}
+                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
+                    {/*           alt={"night"}></Image>*/}
+                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
+                    {/*           alt={"night"}></Image>*/}
+                    {/*</div>*/}
+
                 </div>
-                <div className={"flex flex-none"}>
-                    {articleButton}
-                    {talkButton}
-                    {friendButton}
-                </div>
-                <div className={"flex-none flex gap-4"}>
-                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}
-                           alt={"night"}></Image>
-                    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}
-                           alt={"night"}></Image>
-                </div>
+
             </div>
 
             {/* background */}
             <div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}
                  style={{backgroundImage: "url(/favicon.svg)"}}></div>
 
-            <div className={"mt-20 px-[12%]"}>
-                <main>{children}</main>
+            <div className={"mt-20 flex justify-center"}>
+                <div className={"grid-cols-5 grid gap-3 max-w-[1080px] grow"}>
+                    {/* Personal Profile on Left */}
+                    <div>
+                        <div className={"grid border-r fixed max-w-[230px] w-[16%] pr-4 top-20 bottom-10 content-between"}>
+                            <div className={"grid gap-y-2 justify-items-start"}>
+                                <div>
+                                    <Image
+                                        priority
+                                        src={"/images/profile.jpg"}
+                                        className={"rounded-3xl"}
+                                        height={"180"}
+                                        width={"180"}
+                                        alt={name}
+                                    />
+                                </div>
+                                <div className={"text-3xl font-extrabold"}>{name}</div>
+                                <div className={"text-gray-400"}>{`Control freak.`}</div>
+                                <div>UG Student @ <Link href={"https://www.sustech.edu.cn/"}><span
+                                    className={"link-ina"}>SUSTech</span></Link></div>
+                                <div>Visiting Student<br/>@ <Link href={"https://www.wisc.edu"}><span
+                                    className={"link-ina"}>UW - Madison</span></Link></div>
+                            </div>
+
+                            <div className={"grid gap-y-2 justify-items-start"}>
+                                <div className={"flex gap-x-4"}>
+                                    <div>
+                                        <Link href={"https://twitter.com/Whale__Eye"}>
+                                            <Image src={"/icons/twitter-icon.svg"} className={"cursor-pointer"}
+                                                   width={"30"}
+                                                   height={"30"} alt={"GitHub"}></Image>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link href={"https://www.github.com/WHALEEYE"}>
+                                            <Image src={"/icons/github-icon.svg"} className={"cursor-pointer"}
+                                                   width={"30"}
+                                                   height={"30"} alt={"Twitter"}>
+                                            </Image>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link href={"https://steamcommunity.com/id/whaleeye/"}>
+                                            <Image src={"/icons/steam-icon.svg"} className={"cursor-pointer"}
+                                                   width={"30"}
+                                                   height={"30"} alt={"Steam"}>
+                                            </Image>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link href={"https://www.facebook.com/whale.swaggy"}>
+                                            <Image src={"/icons/facebook-icon.svg"} className={"cursor-pointer"}
+                                                   width={"30"} height={"30"} alt={"Steam"}>
+                                            </Image>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div>
+                                    <Link href={"mailto:jinzx2019@mail.sustech.edu.cn"}>
+                                        <div className={"link-ina"}>Contact me</div>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Brief information on the right */}
+                    <div className={"col-span-4 ml-20"}>
+                        <main>{children}</main>
+                    </div>
+                </div>
             </div>
 
 

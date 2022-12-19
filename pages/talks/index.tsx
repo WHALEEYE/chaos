@@ -26,11 +26,9 @@ export default function Home({sortedPostsData}: {
             {/* Brief information on the right */}
             <div className={"grid gap-y-4"}>
 
-                <div className={"leading-normal"}>
-                    <p>This is the homepage of talks.</p>
-                </div>
+                <div>This is the homepage of talks.</div>
 
-                <div className={"grid gap-y-12"}>
+                <div className={"grid gap-y-4"}>
                     {/*Featured*/}
                     {(featured.length != 0) && (
                         <div>

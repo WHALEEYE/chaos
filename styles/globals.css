@@ -28,6 +28,14 @@
     .link-ina {
         @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
     }
+
+    .heading-2xl {
+        @apply font-bold text-2xl
+    }
+
+    .heading-xl {
+        @apply font-bold text-xl
+    }
 }
 
 html,

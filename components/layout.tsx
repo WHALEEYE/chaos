@@ -60,7 +60,7 @@ export default function Layout({children, section}: {
             {/* navigator bar */}
             <div
                 className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center"}>
-                <div className={"flex justify-end grow max-w-[1080px]"}>
+                <div className={"flex justify-end grow max-w-[1200px]"}>
                     <div className={"flex items-center grow align-self-start"}>
                         <Link href={"/"}>
                             <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
@@ -91,11 +91,11 @@ export default function Layout({children, section}: {
             <div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}
                  style={{backgroundImage: "url(/favicon.svg)"}}></div>
 
-            <div className={"mt-20 flex justify-center"}>
-                <div className={"grid-cols-5 grid gap-3 max-w-[1080px] grow"}>
+            <div className={"mt-20 mb-10 flex justify-center select-none"}>
+                <div className={"grid-cols-5 grid gap-3 max-w-[1200px] grow"}>
                     {/* Personal Profile on Left */}
                     <div>
-                        <div className={"grid border-r fixed max-w-[230px] w-[16%] pr-4 top-20 bottom-10 content-between"}>
+                        <div className={"grid border-r fixed max-w-[250px] w-[17%] pr-4 top-20 bottom-10 content-between"}>
                             <div className={"grid gap-y-2 justify-items-start"}>
                                 <div>
                                     <Image
@@ -109,7 +109,7 @@ export default function Layout({children, section}: {
                                 </div>
                                 <div className={"text-3xl font-extrabold"}>{name}</div>
                                 <div className={"text-gray-400"}>{`Control freak.`}</div>
-                                <div>UG Student @ <Link href={"https://www.sustech.edu.cn/"}><span
+                                <div>UG Student @ <Link href={"https://www.sustech.edu.cn/en/"}><span
                                     className={"link-ina"}>SUSTech</span></Link></div>
                                 <div>Visiting Student<br/>@ <Link href={"https://www.wisc.edu"}><span
                                     className={"link-ina"}>UW - Madison</span></Link></div>

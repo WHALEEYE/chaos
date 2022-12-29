@@ -29,12 +29,24 @@
         @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
     }
 
+    .link-header {
+        @apply hover:bg-yellow-300/30 cursor-pointer decoration-dotted underline decoration-gray-400 text-lg
+    }
+
+    .light-text {
+        @apply text-gray-400 text-sm
+    }
+
     .heading-2xl {
         @apply font-bold text-2xl
     }
 
-    .heading-xl {
-        @apply font-bold text-xl
+    .heading-3xl {
+        @apply font-bold text-3xl
+    }
+
+    .section-list {
+        @apply grid gap-y-2
     }
 }
 

@@ -4,7 +4,7 @@ import React from "react";
 
 export const sectionName = "friends";
 
-export default function Home() {
+export default function Friends() {
     return (
         <Layout section={sectionName}>
             <Head>

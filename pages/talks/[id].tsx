@@ -17,16 +17,15 @@ export default function Post({postData}: {
         <Head>
             <title>{postData.title}</title>
         </Head>
-        <article>
-            <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-            <br/>
-            <div className={utilStyles.lightText}>
+        <div className={"select-text caret-transparent selection:bg-cyan-200"}>
+            <h1 className={"heading-xl"}>{postData.title}</h1>
+            <div className={"light-text"}>
                 <Date dateString={postData.date}/>
             </div>
             <br/>
             <div dangerouslySetInnerHTML={{__html: postData.contentHtml}}/>
             <br/>
-        </article>
+        </div>
     </Layout>)
 }
 

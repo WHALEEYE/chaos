@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
 import {getLatestPostsData} from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import {GetStaticProps} from 'next'
 import React from "react";
+import Card from '../components/card'
 
 export default function Home({allLatestPostsData}: {
     allLatestPostsData: {
@@ -24,8 +24,8 @@ export default function Home({allLatestPostsData}: {
             </Head>
             <div className={"grid gap-y-8"}>
                 {/* bios */}
-                <div className={"grid gap-y-3"}>
-                    <div>Hello there! Welcome to CHAOS, my personal blog.</div>
+                <div className={"grid gap-y-2"}>
+                    <div>Hello there! Welcome to CHAOS, my personal website.</div>
                     <div>The articles about academic and technical topics will be collected in <Link
                         href={"/articles"}><span
                         className={"link-ina"}>articles</span></Link>, and those about casual, miscellaneous topics
@@ -37,29 +37,22 @@ export default function Home({allLatestPostsData}: {
                     </div>
                     <div>Have a good time! =)</div>
                 </div>
+
                 {/* Latest */}
-                <div className={"grid gap-y-12"}>
-                    {allLatestPostsData.map(({section, posts}) => (
-                        <div key={section}>
-                            <div className={"text-2xl font-black mb-3"}>
-                                Latest {section.charAt(0).toUpperCase() + section.slice(1)}
-                            </div>
-                            <div className={"grid gap-3"}>
-                                {posts.map(({id, date, title}) => (
-                                    <div className={"list-none leading-relaxed"} key={id}>
-                                        <Link href={`/${section}/${id}`}>
-                                            <span className={"link-ina"}>{title}</span>
-                                        </Link>
-                                        <br/>
-                                        <small className={utilStyles.lightText}>
-                                            <Date dateString={date}/>
-                                        </small>
-                                    </div>
-                                    ))}
+                {allLatestPostsData.map(({section, posts}) => (
+                    <Card title={"Latest " + section.charAt(0).toUpperCase() + section.slice(1)} key={section}>
+                        {posts.map(({id, date, title}) => (
+                            <div key={id}>
+                                <Link href={`/${section}/${id}`}>
+                                    <span className={"link-header"}>{title}</span>
+                                </Link>
+                                <div className={"light-text"}>
+                                    <Date dateString={date}/>
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </Card>
+                ))}
             </div>
         </Layout>
     )

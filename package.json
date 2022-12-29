@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "move-static": "cp -a ./node_modules/@pdftron/webviewer/public/. ./dist/public/webviewer",
     "dev": "cross-env NODE_ENV=development next dev",
-    "build": "next build",
+    "build": "next build && npm run move-static",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@pdftron/webviewer": "^8.11.0",
     "date-fns": "^2.29.2",
     "gray-matter": "^4.0.3",
     "next": "12.2.5",

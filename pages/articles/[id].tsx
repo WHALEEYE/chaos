@@ -2,7 +2,6 @@ import Layout from "../../components/layout";
 import {getAllPostIds, getPostData} from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
-import utilStyles from "../../styles/utils.module.css"
 import {GetStaticPaths, GetStaticProps} from "next";
 import {sectionName} from "./index"
 
@@ -17,16 +16,13 @@ export default function Post({postData}: {
         <Head>
             <title>{postData.title}</title>
         </Head>
-        <article>
-            <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-            <br/>
-            <div className={utilStyles.lightText}>
+        <div className={"select-text caret-transparent selection:bg-cyan-200 gap-y-3 grid"}>
+            <h1 className={"heading-3xl"}>{postData.title}</h1>
+            <div className={"light-text"}>
                 <Date dateString={postData.date}/>
             </div>
-            <br/>
             <div dangerouslySetInnerHTML={{__html: postData.contentHtml}}/>
-            <br/>
-        </article>
+        </div>
     </Layout>)
 }
 

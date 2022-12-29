@@ -6,11 +6,12 @@ import Link from 'next/link'
 import Date from '../../components/date'
 import {GetStaticProps} from 'next'
 import React from "react";
+import Card from "../../components/card";
 
 export const sectionName = "articles";
 const featured = ["ssg-ssr"];
 
-export default function Home({sortedPostsData}: {
+export default function Articles({sortedPostsData}: {
     sortedPostsData: {
         date: string
         title: string
@@ -24,51 +25,40 @@ export default function Home({sortedPostsData}: {
             </Head>
 
             {/* Brief information on the right */}
-            <div className={"grid gap-y-4"}>
-
+            <div className={"grid gap-y-8"}>
                 <div>This is the homepage of articles.</div>
 
-                <div className={"grid gap-y-4"}>
-                    {/*Featured*/}
-                    {(featured.length != 0) && (
-                        <div>
-                            <div className={"text-2xl font-black mb-3"}>Featured</div>
-                            <div className={"grid gap-3"}>
-                                {sortedPostsData.map(({id, date, title}) => (
-                                    (featured.includes(id)) && (
-                                        <div className={"list-none leading-relaxed"} key={id}>
-                                            <Link href={`/${sectionName}/${id}`}>
-                                                <span className={"link-ina"}>{title}</span>
-                                            </Link>
-                                            <br/>
-                                            <small className={utilStyles.lightText}>
-                                                <Date dateString={date}/>
-                                            </small>
-                                        </div>
-                                    )
-                                ))}
+                {/*Featured*/}
+                {(featured.length != 0) && (
+                    <Card title={"Featured"}>
+                        {sortedPostsData.map(({id, date, title}) => (
+                            (featured.includes(id)) && (
+                                <div key={id}>
+                                    <Link href={`/${sectionName}/${id}`}>
+                                        <span className={"link-header"}>{title}</span>
+                                    </Link>
+                                    <div className={"light-text"}>
+                                        <Date dateString={date}/>
+                                    </div>
+                                </div>
+                            )
+                        ))}
+                    </Card>
+                )}
+
+                {/* All */}
+                <Card title={"All"}>
+                    {sortedPostsData.map(({id, date, title}) => (
+                        <div key={id}>
+                            <Link href={`/${sectionName}/${id}`}>
+                                <span className={"link-header"}>{title}</span>
+                            </Link>
+                            <div className={"light-text"}>
+                                <Date dateString={date}/>
                             </div>
                         </div>
-                    )}
-
-                    {/* All */}
-                    <div>
-                        <div className={"text-2xl font-black mb-3"}>All</div>
-                        <div className={"grid gap-3"}>
-                            {sortedPostsData.map(({id, date, title}) => (
-                                <div className={"list-none leading-relaxed"} key={id}>
-                                    <Link href={`/${sectionName}/${id}`}>
-                                        <span className={"link-ina"}>{title}</span>
-                                    </Link>
-                                    <br/>
-                                    <small className={utilStyles.lightText}>
-                                        <Date dateString={date}/>
-                                    </small>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                    ))}
+                </Card>
             </div>
         </Layout>
     )

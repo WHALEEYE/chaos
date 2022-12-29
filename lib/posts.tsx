@@ -10,7 +10,11 @@ export function getSortedPostsData(section: string) {
     // Get file names under /posts/{section}
     const sectionDirectory = path.join(postsDirectory, section);
     const fileNames = fs.readdirSync(sectionDirectory);
-    const allPostsData = fileNames.map((fileName) => {
+    const allPostsData = [];
+    for (const fileName of fileNames) {
+        if (!fileName.endsWith(".md")) {
+            continue;
+        }
         // Remove ".md" from file name to get id
         const id = fileName.replace(/\.md$/, '');
 
@@ -22,12 +26,13 @@ export function getSortedPostsData(section: string) {
         const matterResult = matter(fileContents);
 
         // Combine the data with the id
-        return {
+        allPostsData.push({
             id,
-            ...(matterResult.data as { date: string, title: string }),
-        };
-    });
-    // Sort articles by date
+            ...(matterResult.data as { date: string, title: string })
+        });
+    }
+
+    // Sort posts by date
     return allPostsData.sort(({date: a}, {date: b}) => {
         if (a < b) {
             return 1;
@@ -41,13 +46,17 @@ export function getSortedPostsData(section: string) {
 
 export function getAllPostIds(section: string) {
     const fileNames = fs.readdirSync(path.join(postsDirectory, section));
-    return fileNames.map(fileName => {
-        return {
-            params: {
-                id: fileName.replace(/\.md$/, ''),
-            },
-        };
-    });
+    const ids = [];
+    for (const fileName of fileNames) {
+        if (fileName.endsWith('.md')) {
+            ids.push({
+                params: {
+                    id: fileName.replace(/\.md$/, '')
+                }
+            });
+        }
+    }
+    return ids;
 }
 
 function getAllSections() {

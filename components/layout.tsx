@@ -1,14 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import React, {ReactNode} from "react";
-import Script from "next/script";
 
 export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
-
-const isDev = process.env.NODE_ENV === 'development'
 
 export default function Layout({children, section}: {
     children: ReactNode, section?: string
@@ -20,6 +16,7 @@ export default function Layout({children, section}: {
             <div className={"navi-unselected hover:navi-selected"}>Profile</div>
         </Link>
 
+    // TODO: Friends and Markdown
     const articleButton = (section === "articles") ?
         <div className={"navi-selected"}>Articles</div> :
         <Link href={"/articles"}>
@@ -163,28 +160,6 @@ export default function Layout({children, section}: {
                     </div>
                 </div>
             </div>
-
-
-            {/* TODO: delete this part of code when the blog is finished */}
-            {!isDev && (<div className={"grid z-20 opacity-95 bg-black absolute inset-0 p-20 gap-y-15"}>
-                <div>
-                    <h1 className={utilStyles.title}>
-                        Welcome to Chaos.
-                    </h1>
-
-                    <h1 className={utilStyles.subtitle}>The End of My Cosmic Mind</h1>
-                </div>
-
-
-                <div>
-                    <Script src={"https://cdn.logwork.com/widget/countdown.js"} strategy={"afterInteractive"}></Script>
-                    <a href="https://logwork.com/countdown-79iv" className="countdown-timer" data-style="circles"
-                       data-date="2023-02-01 23:59" data-background="#00f9ee"
-                       data-unitscolor="#ababab"
-                       data-textcolor="#ababab">Open In</a>
-                </div>
-
-            </div>)}
 
         </div>
     );

@@ -109,8 +109,6 @@ export default function Layout({children, section}: {
                                 <div className={"text-gray-400"}>{`Control freak.`}</div>
                                 <div>UG Student @ <Link href={"https://www.sustech.edu.cn/en/"}><span
                                     className={"link-ina"}>SUSTech</span></Link></div>
-                                <div>Visiting Student<br/>@ <Link href={"https://www.wisc.edu"}><span
-                                    className={"link-ina"}>UW - Madison</span></Link></div>
                             </div>
 
                             <div className={"grid gap-y-2 justify-items-start"}>

@@ -16,7 +16,7 @@ export default function Post({postData}: {
         <Head>
             <title>{postData.title}</title>
         </Head>
-        <div className={"select-text caret-transparent selection:bg-cyan-200"}>
+        <div className={"article-content"}>
             <h1 className={"heading-xl"}>{postData.title}</h1>
             <div className={"light-text"}>
                 <Date dateString={postData.date}/>

@@ -3,16 +3,26 @@
 @tailwind utilities;
 
 @layer base {
-    /* revert the style of the list */
-    ul {
-        list-style-type: disc;
-        margin: revert;
-        padding: revert;
+    h5 {
+        @apply text-lg
     }
 
-    /* revert the style of the paragraphs */
-    p {
-        margin: revert;
+    blockquote {
+        @apply m-0 pl-4 py-0.5 shadow-md bg-gray-100 italic rounded
+    }
+
+    a {
+        @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
+    }
+
+    /* large code blocks will be parsed into `pre` tags by remark */
+    pre {
+        @apply bg-gray-600/10 shadow-inner
+    }
+
+    /* all code blocks will be parsed into `code` tags by remark */
+    code {
+        @apply text-sm
     }
 }
 
@@ -48,6 +58,10 @@
     .section-list {
         @apply grid gap-y-2
     }
+
+    .article-content {
+        @apply select-text caret-transparent selection:bg-cyan-200 gap-y-3 grid
+    }
 }
 
 html,
@@ -62,15 +76,6 @@ body {
 
 * {
     box-sizing: border-box;
-}
-
-a {
-    color: #0070f3;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 img {

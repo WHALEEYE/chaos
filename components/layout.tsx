@@ -92,7 +92,8 @@ export default function Layout({children, section}: {
                 <div className={"grid-cols-5 grid gap-3 max-w-[1200px] grow"}>
                     {/* Personal Profile on Left */}
                     <div>
-                        <div className={"grid border-r fixed max-w-[250px] w-[17%] pr-4 top-20 bottom-10 content-between"}>
+                        <div
+                            className={"grid border-r fixed max-w-[250px] w-[17%] pr-4 top-20 bottom-10 content-between"}>
                             <div className={"grid gap-y-2 justify-items-start"}>
                                 <div>
                                     <Image

@@ -17,9 +17,11 @@ export default function Post({postData}: {
             <title>{postData.title}</title>
         </Head>
         <div className={"article-content"}>
-            <h1 className={"heading-3xl"}>{postData.title}</h1>
-            <div className={"light-text"}>
-                <Date dateString={postData.date}/>
+            <div>
+                <h1 className={"mt-0 mb-2"}>{postData.title}</h1>
+                <div className={"light-text"}>
+                    <Date dateString={postData.date}/>
+                </div>
             </div>
             <div dangerouslySetInnerHTML={{__html: postData.contentHtml}}/>
         </div>

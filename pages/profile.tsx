@@ -27,7 +27,7 @@ export default function Profile() {
                     </div>
                     <div>
                         <div><b>Visiting International Student</b>, <i>University of Wisconsin - Madison</i></div>
-                        <div className={"light-text"}>2022.9 - 2023.1 (Expected)</div>
+                        <div className={"light-text"}>2022.9 - 2023.1</div>
                     </div>
                 </Card>
 

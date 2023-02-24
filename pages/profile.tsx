@@ -61,7 +61,7 @@ export default function Profile() {
                         </div>
                     </div>
                     <div>
-                        <Link href={"https://github.com/dandansamax/SPL-Compiler"}>
+                        <Link href={"https://github.com/WHALEEYE/Hash-Checker"}>
                             <span className={"link-header"}>Hash Checker for Web Applications</span>
                         </Link>
                         <div className={"light-text"}>

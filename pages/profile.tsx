@@ -27,7 +27,7 @@ export default function Profile() {
                     </div>
                     <div>
                         <div><b>Visiting International Student</b>, <i>University of Wisconsin - Madison</i></div>
-                        <div className={"light-text"}>2022.9 - 2023.1 (Expected)</div>
+                        <div className={"light-text"}>2022.9 - 2023.1</div>
                     </div>
                 </Card>
 
@@ -61,7 +61,7 @@ export default function Profile() {
                         </div>
                     </div>
                     <div>
-                        <Link href={"https://github.com/dandansamax/SPL-Compiler"}>
+                        <Link href={"https://github.com/WHALEEYE/Hash-Checker"}>
                             <span className={"link-header"}>Hash Checker for Web Applications</span>
                         </Link>
                         <div className={"light-text"}>

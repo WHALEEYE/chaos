@@ -1,5 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped
-with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CHAOS
+
+This repo is the source code CHAOS, my personal blog.
+
+CHAOS is a [Next.js](https://nextjs.org/) project bootstrapped
+with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), and later developed
+with TypeScript and Tailwind CSS.
+
+## Create Your Own
+
+This repo is set as a template (it may need some refactor in the future to be simpler to use though). If you want to use
+it to create your own blog, just [use template](https://github.com/WHALEEYE/chaos/generate) to generate your own repo.
 
 ## Getting Started
 
@@ -13,14 +23,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed
-on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited
-in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated
-as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You can start editing the files. The page will auto-updates as you edit.
 
 ## Learn More
 
@@ -38,4 +41,40 @@ The easiest way to deploy your Next.js app is to use
 the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
 from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Version Checkpoints
+
+### 🎉 Version 1.0
+
+- [x] Navigation Bar
+
+- [x] Left Information Block
+
+- [x] Pages
+  - [x] Profile
+  - [x] Articles
+  - [x] Talks
+  - [x] Friends (Need a Friend to Test Though😢)
+
+- [x] Blog Content
+    - [x] Compile from Markdown to HTML
+    - [x] Adjusted Style of Components
+
+### 👨‍💻 Version 2.0
+
+- [x] Fit Different Resolutions on Desktop Side
+- [ ] Night Mode
+- [ ] Article Covers
+
+### 🔮 Version 3.0
+
+- [ ] Custom Components in Blog
+- [ ] Custom Blog Meta Info
+
+### 🔮 Version 4.0
+
+- [ ] Refactor
+- [ ] Bilingual Support
+- [ ] Mobile Support
+

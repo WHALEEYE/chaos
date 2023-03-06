@@ -23,7 +23,6 @@
     overflow: hidden;
     outline: 0;
     -webkit-overflow-scrolling: touch;
-    background-color: rgb(0, 0, 0);
     filter: alpha(opacity=60);
     background-color: rgba(0, 0, 0, 0.93);
     z-index: 9999;

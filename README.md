@@ -45,7 +45,7 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 
 ## Version Checkpoints
 
-### 🎉 Version 1.0
+### 🎉 Version 0.0
 
 - [x] Navigation Bar
 
@@ -61,18 +61,18 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
     - [x] Compile from Markdown to HTML
     - [x] Adjusted Style of Components
 
-### 👨‍💻 Version 2.0
+### 👨‍💻 Version 1.0
 
 - [x] Fit Different Resolutions on Desktop Side
 - [ ] Night Mode
 - [ ] Article Covers
 
-### 🔮 Version 3.0
+### 🔮 Version 2.0
 
 - [ ] Custom Components in Blog
 - [ ] Custom Blog Meta Info
 
-### 🔮 Version 4.0
+### 🔮 Version 3.0
 
 - [ ] Refactor
 - [ ] Bilingual Support

@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="27w06xP-gHnEaP2budzd" name="Page-1">
+        <mxGraphModel dx="1532" dy="810" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="13" value="How to Build an Airport from Start With an Even Far More ..." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="50" y="190" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="250" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="249.99999999999997" y="190" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="How to Build an Airport from Start With a Longer Title" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="50" y="290" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="350" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="290" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="How to Build an Airport&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="50" y="390" width="190" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="450" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="249.99999999999997" y="390" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Latest Articles" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="130" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Normal State:&lt;br&gt;&lt;ol&gt;&lt;li&gt;The vertical space between heading and grids are identical.&lt;/li&gt;&lt;li&gt;The cover of each blog is 16:9.&lt;/li&gt;&lt;li&gt;The width of grid (invisible) of blog titles and the width of covers keeps the ratio of nearly 1:0.618.&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="280" width="340" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="How to Build an Airport from Start With an Even Far More ..." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="50" y="680" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="740" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="249.99999999999997" y="680" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="How to Build an Airport from Start With a Longer Title" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#CC6600;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="780" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="840" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="780" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="How to Build an Airport&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="50" y="880" width="190" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="Jan 6, 2021" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#808080;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="940" width="90" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;fontColor=#808080;dashed=1;fillColor=none;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="249.99999999999997" y="880" width="124.44" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="Latest Articles" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="620" width="170" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Selection State:&lt;br&gt;&lt;ol&gt;&lt;li&gt;Change the color of the title to selected color&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="770" width="340" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

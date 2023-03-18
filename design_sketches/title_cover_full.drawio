@@ -1,0 +1,28 @@
+<mxfile host="65bd71144e">
+    <diagram id="-sZ8kuEzz0Fu9H9TbBZq" name="Page-1">
+        <mxGraphModel dx="3174" dy="1677" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="40" width="640" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;span style=&quot;font-weight: 700; font-size: 28px;&quot;&gt;How to Build an Airport from Start With an&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-weight: 700; font-size: 28px;&quot;&gt;Even Far More Longer Title&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;fontSize=28;fontStyle=4;horizontal=1;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="130" width="571" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="470" width="640" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;span style=&quot;font-size: 28px;&quot;&gt;How to Build an Airport from Start With an&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 28px;&quot;&gt;Even Far More Longer Title&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;fontSize=28;fontStyle=1;horizontal=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="850" width="571" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Plan 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontSize=28;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="240" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Plan 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontSize=28;" vertex="1" parent="1">
+                    <mxGeometry x="268.5" y="960" width="234" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

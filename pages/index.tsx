@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Layout, {siteTitle} from '../components/layout'
 import {getLatestPostsData} from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
 import {GetStaticProps} from 'next'
 import React from "react";
-import Card from '../components/card'
+import Showcase from '../components/showcase'
+import SmallCard from "../components/small_card";
 
 export default function Home({allLatestPostsData}: {
     allLatestPostsData: {
@@ -14,6 +14,7 @@ export default function Home({allLatestPostsData}: {
             date: string
             title: string
             id: string
+            cover: string
         }[]
     }[]
 }) {
@@ -40,18 +41,14 @@ export default function Home({allLatestPostsData}: {
 
                 {/* Latest */}
                 {allLatestPostsData.map(({section, posts}) => (
-                    <Card title={"Latest " + section.charAt(0).toUpperCase() + section.slice(1)} key={section}>
-                        {posts.map(({id, date, title}) => (
+                    <Showcase title={"Latest " + section.charAt(0).toUpperCase() + section.slice(1)} key={section}>
+                        {posts.map(({id, date, title, cover}) => (
                             <div key={id}>
-                                <Link href={`/${section}/${id}`}>
-                                    <span className={"link-header"}>{title}</span>
-                                </Link>
-                                <div className={"light-text"}>
-                                    <Date dateString={date}/>
-                                </div>
+                                <SmallCard title={title} dateString={date} sectionName={section} id={id}
+                                           coverString={cover}/>
                             </div>
                         ))}
-                    </Card>
+                    </Showcase>
                 ))}
             </div>
         </Layout>

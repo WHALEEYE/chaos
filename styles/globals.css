@@ -7,6 +7,10 @@
         @apply text-lg
     }
 
+    img {
+        @apply select-none
+    }
+
     blockquote {
         @apply m-0 pl-4 py-0.5 shadow-md bg-gray-100 italic rounded
     }

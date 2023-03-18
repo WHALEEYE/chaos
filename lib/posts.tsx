@@ -28,7 +28,7 @@ export function getSortedPostsData(section: string) {
         // Combine the data with the id
         allPostsData.push({
             id,
-            ...(matterResult.data as { date: string, title: string })
+            ...(matterResult.data as { date: string, title: string, cover: string, featured: boolean })
         });
     }
 
@@ -84,7 +84,7 @@ export async function getPostData(section: string, id: string) {
     return {
         id,
         contentHtml,
-        ...(matterResult.data as { date: string, title: string }),
+        ...(matterResult.data as { date: string, title: string, cover:string }),
     };
 }
 

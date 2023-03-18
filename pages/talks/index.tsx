@@ -5,18 +5,21 @@ import Link from 'next/link'
 import Date from '../../components/date'
 import {GetStaticProps} from 'next'
 import React from "react";
-import Card from "../../components/card";
+import Showcase from "../../components/showcase";
+import SmallCard from "../../components/small_card";
 
 export const sectionName = "talks";
-const featured = ["ssg-ssr"];
 
 export default function Talks({sortedPostsData}: {
     sortedPostsData: {
         date: string
         title: string
         id: string
+        featured: boolean
+        cover: string
     }[]
 }) {
+    let features = sortedPostsData.filter(({featured}) => featured)
     return (
         <Layout section={sectionName}>
             <Head>
@@ -28,25 +31,19 @@ export default function Talks({sortedPostsData}: {
                 <div>This is the homepage of talks.</div>
 
                 {/*Featured*/}
-                {(featured.length != 0) && (
-                    <Card title={"Featured"}>
-                        {sortedPostsData.map(({id, date, title}) => (
-                            (featured.includes(id)) && (
-                                <div key={id}>
-                                    <Link href={`/${sectionName}/${id}`}>
-                                        <span className={"link-header"}>{title}</span>
-                                    </Link>
-                                    <div className={"light-text"}>
-                                        <Date dateString={date}/>
-                                    </div>
-                                </div>
-                            )
+                {(features.length != 0) && (
+                    <Showcase title={"Featured"}>
+                        {features.map(({id, date, title, cover}) => (
+                            <div key={id}>
+                                <SmallCard title={title} dateString={date} sectionName={sectionName} id={id}
+                                           coverString={cover}/>
+                            </div>
                         ))}
-                    </Card>
+                    </Showcase>
                 )}
 
                 {/* All */}
-                <Card title={"All"}>
+                <Showcase title={"All"}>
                     {sortedPostsData.map(({id, date, title}) => (
                         <div key={id}>
                             <Link href={`/${sectionName}/${id}`}>
@@ -57,7 +54,7 @@ export default function Talks({sortedPostsData}: {
                             </div>
                         </div>
                     ))}
-                </Card>
+                </Showcase>
             </div>
         </Layout>
     )

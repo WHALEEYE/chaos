@@ -4,18 +4,23 @@ import Head from "next/head";
 import Date from "../../components/date";
 import {GetStaticPaths, GetStaticProps} from "next";
 import {sectionName} from "./index"
+import Image from "next/image";
 
 export default function Post({postData}: {
     postData: {
+        id: string
         title: string
         date: string
         contentHtml: string
+        cover: string
     }
 }) {
+    const coverURL = `/figures/${sectionName}/${postData.id}/${postData.cover}`
     return (<Layout>
         <Head>
             <title>{postData.title}</title>
         </Head>
+        <Image src={coverURL} width={1920} height={1080} alt={"cover"}/>
         <div className={"article-content"}>
             <div>
                 <h1 className={"mt-0 mb-2"}>{postData.title}</h1>

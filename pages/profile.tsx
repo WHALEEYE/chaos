@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout, {siteTitle} from '../components/layout'
 import React from "react";
 import Link from "next/link";
-import Card from "../components/card";
+import Showcase from "../components/showcase";
 
 export const sectionName = "profile";
 
@@ -19,7 +19,7 @@ export default function Profile() {
                     href={"/CV.pdf"}><span className={"link-ina"}>here</span></Link>.
                 </div>
                 {/* Education */}
-                <Card title={"Education"}>
+                <Showcase title={"Education"}>
                     <div>
                         <div><b>Undergraduate Student of Computer Science</b>, <i>Southern University of Science and
                             Technology</i></div>
@@ -29,17 +29,17 @@ export default function Profile() {
                         <div><b>Visiting International Student</b>, <i>University of Wisconsin - Madison</i></div>
                         <div className={"light-text"}>2022.9 - 2023.1</div>
                     </div>
-                </Card>
+                </Showcase>
 
                 {/* Research Interests */}
-                <Card title={"Research Interests"}>
+                <Showcase title={"Research Interests"}>
                     <div>Now {`I'm`} mainly interested in some topics in the research fields of computer security,
                         including <b>system security</b>, <b>network security</b> and <b>cloud native security</b>.
                     </div>
-                </Card>
+                </Showcase>
 
                 {/* Projects */}
-                <Card title={"Projects"}>
+                <Showcase title={"Projects"}>
                     <div>
                         <Link href={"https://github.com/WHALEEYE/weave-editor"}>
                             <span className={"link-header"}>Weave Editor</span>
@@ -81,10 +81,10 @@ export default function Profile() {
                             <div>This is the course project of Object-Oriented Analysis and Design.</div>
                         </div>
                     </div>
-                </Card>
+                </Showcase>
 
                 {/* Awards */}
-                <Card title={"Awards"}>
+                <Showcase title={"Awards"}>
                     <div>
                         <div><b>SUSTech Outstanding Freshman Scholarship</b>, <i>Second-class Award</i></div>
                         <div className={"light-text"}>2019.6</div>
@@ -101,7 +101,7 @@ export default function Profile() {
                         <div><b>SUSTech Outstanding Student Scholarship</b>, <i>Third-class Award</i></div>
                         <div className={"light-text"}>2022.9</div>
                     </div>
-                </Card>
+                </Showcase>
             </div>
         </Layout>
     )

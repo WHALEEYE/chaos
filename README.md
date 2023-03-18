@@ -65,12 +65,13 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 
 - [x] Fit Different Resolutions on Desktop Side
 - [ ] Night Mode
-- [ ] Article Covers
+- [x] Article Covers
 
 ### 🔮 Version 2.0
 
 - [ ] Custom Components in Blog
-- [ ] Custom Blog Meta Info
+- [x] Custom Blog Meta Info
+- [ ] Page Division
 
 ### 🔮 Version 3.0
 
@@ -78,3 +79,7 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 - [ ] Bilingual Support
 - [ ] Mobile Support
 
+### 🔮 Version 4.0
+
+- [ ] Search Support
+- [ ] Sort Modification

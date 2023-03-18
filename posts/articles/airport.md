@@ -1,6 +1,8 @@
 ---
 title: 'How to Build an Airport from Start'
 date: '2022-06-12'
+featured: true
+cover: 'vpn.jpg'
 ---
 
 > Part of this article
@@ -139,21 +141,21 @@ Specify your server and port. Note that you can specify the server path which is
 file in the `origin path` field here, or in the configuration file of Clash. Also, since the communication between CDN
 and server is a dedicated line, so we can just use HTTP here.
 
-![image-20220618000403551](/setup.assets/image-20220618000403551.png)
+![image-20220618000403551](/figures/articles/airport/image-20220618000403551.png)
 
-Also we need to change the cache settings to legacy so that none of our request will be cached by CDN, though it should
+Also, we need to change the cache settings to legacy so that none of our request will be cached by CDN, though it should
 be one of the core functions of CDN.
 
-![image-20220618004914623](/setup.assets/image-20220618004914623.png)
+![image-20220618004914623](/figures/articles/airport/image-20220618004914623.png)
 
 We only allow HTTPS here to make sure that every flow from client to the CDN is encrypted by TLS (So the finally
 protocol stack is VMESS + WS + TLS). You may need to apply for a certificate for this.
 
-![image-20220618010225934](/setup.assets/image-20220618010225934.png)
+![image-20220618010225934](/figures/articles/airport/image-20220618010225934.png)
 
 After deployment, we can get a URL of CDN.
 
-Finally we need to do a little modification to the configuration file of Clash.
+Finally, we need to do a little modification to the configuration file of Clash.
 
 ```yaml
 - {

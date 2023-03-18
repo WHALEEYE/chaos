@@ -148,7 +148,7 @@ be one of the core functions of CDN.
 
 ![image-20220618004914623](/figures/articles/airport/image-20220618004914623.png)
 
-We only allow HTTPS here to make sure that every flow from client to the CDN is encrypted by TLS (So the finally
+We only allow HTTPS here to make sure that every flow from client to the CDN is encrypted by TLS (So the final
 protocol stack is VMESS + WS + TLS). You may need to apply for a certificate for this.
 
 ![image-20220618010225934](/figures/articles/airport/image-20220618010225934.png)

@@ -56,7 +56,7 @@ export default function Layout({children, section}: {
 
             {/* navigator bar */}
             <div
-                className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center"}>
+                className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center bg-gray-300/10"}>
                 <div className={"flex justify-end grow max-w-[1200px]"}>
                     <div className={"flex items-center grow align-self-start"}>
                         <Link href={"/"}>
@@ -84,9 +84,9 @@ export default function Layout({children, section}: {
 
             </div>
 
-            {/* background */}
-            <div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}
-                 style={{backgroundImage: "url(/favicon.svg)"}}></div>
+            {/*/!* background *!/*/}
+            {/*<div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}*/}
+            {/*     style={{backgroundImage: "url(/favicon.svg)"}}></div>*/}
 
             <div className={"mt-20 mb-10 flex justify-center select-none"}>
                 <div className={"grid-cols-5 grid gap-3 max-w-[1200px] grow"}>
@@ -146,7 +146,7 @@ export default function Layout({children, section}: {
                                 </div>
                                 <div>
                                     <Link href={"mailto:jinzx2019@mail.sustech.edu.cn"}>
-                                        <div className={"link-ina"}>Contact me</div>
+                                        <div className={"link-ina"}>Contact Me</div>
                                     </Link>
                                 </div>
                             </div>

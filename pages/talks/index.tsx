@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../../components/layout'
 import {getSortedPostsData} from '../../lib/posts'
-import Link from 'next/link'
-import Date from '../../components/date'
 import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from "../../components/showcase";
@@ -44,13 +42,11 @@ export default function Talks({sortedPostsData}: {
 
                 {/* All */}
                 <Showcase title={"All"}>
-                    {sortedPostsData.map(({id, date, title}) => (
+                    {sortedPostsData.map(({id, date, title, cover}) => (
                         <div key={id}>
-                            <Link href={`/${sectionName}/${id}`}>
-                                <span className={"link-header"}>{title}</span>
-                            </Link>
-                            <div className={"light-text"}>
-                                <Date dateString={date}/>
+                            <div key={id}>
+                                <SmallCard title={title} dateString={date} sectionName={sectionName} id={id}
+                                           coverString={cover}/>
                             </div>
                         </div>
                     ))}

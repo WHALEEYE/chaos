@@ -6,8 +6,9 @@ import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from '../components/showcase'
 import SmallCard from "../components/small_card";
+import {Languages} from "../lib/enums";
 
-export default function Home({allLatestPostsData}: {
+export default function Home({allLatestPostsData, curLan, setCurLan}: {
     allLatestPostsData: {
         section: string
         posts: {
@@ -16,10 +17,12 @@ export default function Home({allLatestPostsData}: {
             id: string
             cover: string
         }[]
-    }[]
+    }[],
+    curLan: Languages,
+    setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     return (
-        <Layout section={"home"}>
+        <Layout section={"home"} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

@@ -5,18 +5,22 @@ import Date from "../../components/date";
 import {GetStaticPaths, GetStaticProps} from "next";
 import {sectionName} from "./index"
 import Image from "next/image";
+import {Languages} from "../../lib/enums";
+import React from "react";
 
-export default function Post({postData}: {
+export default function Post({postData, curLan, setCurLan}: {
     postData: {
         id: string
         title: string
         date: string
         contentHtml: string
         cover: string
-    }
+    },
+    curLan: Languages,
+    setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     const coverURL = `/figures/${sectionName}/${postData.id}/${postData.cover}`
-    return (<Layout>
+    return (<Layout setCurLan={setCurLan}>
         <Head>
             <title>{postData.title}</title>
         </Head>

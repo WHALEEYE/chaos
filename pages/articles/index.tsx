@@ -5,21 +5,24 @@ import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from "../../components/showcase";
 import SmallCard from "../../components/small_card";
+import {Languages} from "../../lib/enums";
 
 export const sectionName = "articles";
 
-export default function Articles({sortedPostsData}: {
+export default function Articles({sortedPostsData, curLan, setCurLan}: {
     sortedPostsData: {
         date: string
         title: string
         id: string
         featured: boolean
         cover: string
-    }[]
+    }[],
+    curLan: Languages,
+    setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     let features = sortedPostsData.filter(({featured}) => featured)
     return (
-        <Layout section={sectionName}>
+        <Layout section={sectionName} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

@@ -2,12 +2,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {ReactNode} from "react";
+import {Languages} from "../lib/enums";
 
 export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
 
-export default function Layout({children, section}: {
-    children: ReactNode, section?: string
+export default function Layout({children, section, setCurLan}: {
+    children: ReactNode, section?: string, setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
 
     const profileButton = (section === "profile") ?

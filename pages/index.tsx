@@ -22,7 +22,7 @@ export default function Home({allLatestPostsData, curLan, setCurLan}: {
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     return (
-        <Layout section={"home"} setCurLan={setCurLan}>
+        <Layout section={"home"} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

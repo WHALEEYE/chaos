@@ -20,7 +20,7 @@ export default function Post({postData, curLan, setCurLan}: {
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     const coverURL = `/figures/${sectionName}/${postData.id}/${postData.cover}`
-    return (<Layout setCurLan={setCurLan}>
+    return (<Layout curLan={curLan} setCurLan={setCurLan}>
         <Head>
             <title>{postData.title}</title>
         </Head>

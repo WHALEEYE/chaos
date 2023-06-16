@@ -12,7 +12,7 @@ export default function Profile({curLan, setCurLan}: {
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     return (
-        <Layout section={sectionName} setCurLan={setCurLan}>
+        <Layout section={sectionName} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

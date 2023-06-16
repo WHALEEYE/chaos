@@ -7,8 +7,8 @@ import {Languages} from "../lib/enums";
 export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
 
-export default function Layout({children, section, setCurLan}: {
-    children: ReactNode, section?: string, setCurLan: React.Dispatch<React.SetStateAction<Languages>>
+export default function Layout({children, section, curLan, setCurLan}: {
+    children: ReactNode, section?: string, curLan: Languages, setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
 
     const profileButton = (section === "profile") ?
@@ -36,6 +36,17 @@ export default function Layout({children, section, setCurLan}: {
             <div className={"navi-unselected hover:navi-selected"}>Friends</div>
         </Link>
 
+    const lanButton =
+        <div onClick={() => setCurLan(curLan === Languages.CHN ? Languages.ENG : Languages.CHN)}
+             className={"cursor-pointer grid w-12 items-center text-center"}>
+            {curLan === Languages.ENG ? "ENG" : "中"}
+        </div>
+
+    const nightButton =
+        <div className={"grid items-center"}><Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"}
+                                               height={"20"}
+                                               alt={"night"}></Image></div>
+
     return (
         <div className={"grid gap-10"}>
             <Head>
@@ -59,7 +70,7 @@ export default function Layout({children, section, setCurLan}: {
             <div
                 className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center bg-gray-300/10"}>
                 <div className={"flex justify-end grow max-w-[1200px]"}>
-                    <div className={"flex items-center grow align-self-start"}>
+                    <div className={"flex items-center"}>
                         <Link href={"/"}>
                             <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
                                 <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
@@ -67,12 +78,24 @@ export default function Layout({children, section, setCurLan}: {
                             </div>
                         </Link>
                     </div>
+                    <div className={"flex items-center grow justify-center gap-x-5"}>
+                        {lanButton}
+                        {nightButton}
+                    </div>
                     <div className={"flex flex-none"}>
                         {profileButton}
                         {articleButton}
                         {talkButton}
                         {friendButton}
                     </div>
+                    {/* TODO: Night Mode */}
+                    {/*<div className={"flex-none flex gap-4"}>*/}
+                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
+                    {/*           alt={"night"}></Image>*/}
+                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
+                    {/*           alt={"night"}></Image>*/}
+                    {/*</div>*/}
+
                     {/* TODO: Night Mode */}
                     {/*<div className={"flex-none flex gap-4"}>*/}
                     {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}

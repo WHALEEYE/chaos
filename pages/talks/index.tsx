@@ -22,7 +22,7 @@ export default function Talks({sortedPostsData, curLan, setCurLan}: {
 }) {
     let features = sortedPostsData.filter(({featured}) => featured)
     return (
-        <Layout section={sectionName} setCurLan={setCurLan}>
+        <Layout section={sectionName} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

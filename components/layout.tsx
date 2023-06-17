@@ -44,8 +44,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
 
     const nightButton =
         <div className={"grid items-center"}><Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"}
-                                               height={"20"}
-                                               alt={"night"}></Image></div>
+                                                    height={"20"} alt={"night"}></Image></div>
 
     return (
         <div className={"grid gap-10"}>

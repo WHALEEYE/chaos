@@ -3,16 +3,18 @@ import Layout, {siteTitle} from '../components/layout'
 import React from "react";
 import Link from "next/link";
 import Showcase from "../components/showcase";
-import {Languages} from "../lib/enums";
+import {Languages, Sections} from "../lib/enums";
 
-export const sectionName = "profile";
+
+const section = Sections.PROFILE;
+const sectionPath = Sections.getPath(section)
 
 export default function Profile({curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     return (
-        <Layout section={sectionName} curLan={curLan} setCurLan={setCurLan}>
+        <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

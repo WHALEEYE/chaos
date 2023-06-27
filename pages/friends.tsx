@@ -1,16 +1,18 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../components/layout'
 import React from "react";
-import {Languages} from "../lib/enums";
+import {Languages, Sections} from "../lib/enums";
 
-export const sectionName = "friends";
+
+const section = Sections.FRIENDS;
+const sectionPath = Sections.getPath(section)
 
 export default function Friends({curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     return (
-        <Layout section={sectionName} curLan={curLan} setCurLan={setCurLan}>
+        <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>

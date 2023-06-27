@@ -32,11 +32,19 @@
 
 @layer components {
     .navi-selected {
-        @apply font-bold py-2 px-4 text-[#996e5c]
+        @apply font-bold text-[#996e5c]
     }
 
     .navi-unselected {
-        @apply font-bold py-2 px-4 cursor-pointer
+        @apply font-bold cursor-pointer
+    }
+
+    .navibutton-wide {
+        @apply grid items-center w-16 text-center
+    }
+
+    .navibutton {
+        @apply grid items-center w-10 text-center
     }
 
     .link-ina {
@@ -63,8 +71,8 @@
         @apply grid gap-y-2
     }
 
-    .article-content {
-        @apply select-text caret-transparent selection:bg-cyan-200 gap-y-8 grid
+    .blog-content {
+        @apply select-text caret-transparent selection:bg-cyan-200 gap-y-4 grid
     }
 }
 

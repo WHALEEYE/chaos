@@ -2,49 +2,55 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {ReactNode} from "react";
-import {Languages} from "../lib/enums";
+import {Languages, Sections} from "../lib/enums";
 
 export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
 
 export default function Layout({children, section, curLan, setCurLan}: {
-    children: ReactNode, section?: string, curLan: Languages, setCurLan: React.Dispatch<React.SetStateAction<Languages>>
+    children: ReactNode,
+    section?: Sections,
+    curLan: Languages,
+    setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
 
-    const profileButton = (section === "profile") ?
-        <div className={"navi-selected"}>Profile</div> :
+    const profileButton = (section === Sections.PROFILE) ?
+        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.PROFILE, curLan)}</div> :
         <Link href={"/profile"}>
-            <div className={"navi-unselected hover:navi-selected"}>Profile</div>
+            <div
+                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.PROFILE, curLan)}</div>
         </Link>
 
-    // TODO: Friends and Markdown
-    const articleButton = (section === "articles") ?
-        <div className={"navi-selected"}>Articles</div> :
+    const articleButton = (section === Sections.ARTICLES) ?
+        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.ARTICLES, curLan)}</div> :
         <Link href={"/articles"}>
-            <div className={"navi-unselected hover:navi-selected"}>Articles</div>
+            <div
+                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.ARTICLES, curLan)}</div>
         </Link>
 
-    const talkButton = (section === "talks") ?
-        <div className={"navi-selected"}>Talks</div> :
+    const talkButton = (section === Sections.TALKS) ?
+        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.TALKS, curLan)}</div> :
         <Link href={"/talks"}>
-            <div className={"navi-unselected hover:navi-selected"}>Talks</div>
+            <div
+                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.TALKS, curLan)}</div>
         </Link>
 
-    const friendButton = (section === "friends") ?
-        <div className={"navi-selected"}>Friends</div> :
+    const friendButton = (section === Sections.FRIENDS) ?
+        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.FRIENDS, curLan)}</div> :
         <Link href={"/friends"}>
-            <div className={"navi-unselected hover:navi-selected"}>Friends</div>
+            <div
+                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.FRIENDS, curLan)}</div>
         </Link>
 
     const lanButton =
         <div onClick={() => setCurLan(curLan === Languages.CHN ? Languages.ENG : Languages.CHN)}
-             className={"cursor-pointer grid w-12 items-center text-center"}>
-            {curLan === Languages.ENG ? "ENG" : "中"}
+             className={"navi-unselected font-normal text-center navibutton hover:navi-selected"}>
+            {curLan === Languages.ENG ? "中" : "En"}
         </div>
 
     const nightButton =
-        <div className={"grid items-center"}><Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"}
-                                                    height={"20"} alt={"night"}></Image></div>
+        <div className={"navibutton hover:navi-selected"}><Image src={"/icons/night.svg"} className={"cursor-pointer"}
+                                                                 width={"20"} height={"20"} alt={"night"}></Image></div>
 
     return (
         <div className={"grid gap-10"}>
@@ -69,7 +75,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
             <div
                 className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center bg-gray-300/10"}>
                 <div className={"flex justify-end grow max-w-[1200px]"}>
-                    <div className={"flex items-center"}>
+                    <div className={"flex items-center grow"}>
                         <Link href={"/"}>
                             <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
                                 <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
@@ -77,39 +83,20 @@ export default function Layout({children, section, curLan, setCurLan}: {
                             </div>
                         </Link>
                     </div>
-                    <div className={"flex items-center grow justify-center gap-x-5"}>
-                        {lanButton}
-                        {nightButton}
-                    </div>
-                    <div className={"flex flex-none"}>
+                    <div className={"flex flex-none gap-x-8"}>
+                        <div className={"flex"}>
+                            {lanButton}
+                            {nightButton}
+                        </div>
                         {profileButton}
                         {articleButton}
                         {talkButton}
                         {friendButton}
                     </div>
-                    {/* TODO: Night Mode */}
-                    {/*<div className={"flex-none flex gap-4"}>*/}
-                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
-                    {/*           alt={"night"}></Image>*/}
-                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
-                    {/*           alt={"night"}></Image>*/}
-                    {/*</div>*/}
-
-                    {/* TODO: Night Mode */}
-                    {/*<div className={"flex-none flex gap-4"}>*/}
-                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
-                    {/*           alt={"night"}></Image>*/}
-                    {/*    <Image src={"/icons/night.svg"} className={"cursor-pointer"} width={"20"} height={"20"}*/}
-                    {/*           alt={"night"}></Image>*/}
-                    {/*</div>*/}
 
                 </div>
 
             </div>
-
-            {/*/!* background *!/*/}
-            {/*<div className={"blur-sm bg-cover bg-repeat-y bg-center bg-fixed absolute inset-0 opacity-[.02] -z-10"}*/}
-            {/*     style={{backgroundImage: "url(/favicon.svg)"}}></div>*/}
 
             <div className={"mt-20 mb-10 flex justify-center select-none"}>
                 <div className={"grid-cols-5 grid gap-3 max-w-[1200px] grow"}>

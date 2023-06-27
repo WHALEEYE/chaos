@@ -2,12 +2,13 @@ import React from "react";
 import Date from "./date";
 import Image from "next/image";
 import Link from "next/link";
+import {Languages} from "../lib/enums";
 
-export default function SmallCard({title, dateString, sectionName, id, coverString}: {
-    title: string, dateString: string, sectionName: string, id: string, coverString: string
+export default function SmallCard({title, dateString, sectionPath, id, coverString, curLan}: {
+    title: string, dateString: string, sectionPath: string, id: string, coverString: string, curLan: Languages
 }) {
-    let coverURL = `/figures/${sectionName}/${id}/${coverString}`
-    let blogURL = `/${sectionName}/${id}`
+    let coverURL = `/figures/${sectionPath}/${id}/${coverString}`
+    let blogURL = `/${sectionPath}/${id}`
     return (
         <Link href={blogURL}>
             <div
@@ -15,7 +16,7 @@ export default function SmallCard({title, dateString, sectionName, id, coverStri
                 <div className={"grid col-span-2 content-between"}>
                     <div className={"font-bold text-lg"}>{title}</div>
                     <div className={"light-text"}>
-                        <Date dateString={dateString}/>
+                        <Date dateString={dateString} lan={curLan}/>
                     </div>
                 </div>
                 <div className={"grid"}>

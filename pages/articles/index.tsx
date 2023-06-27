@@ -5,24 +5,28 @@ import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from "../../components/showcase";
 import SmallCard from "../../components/small_card";
-import {Languages} from "../../lib/enums";
+import {Languages, Sections} from "../../lib/enums";
 
-export const sectionName = "articles";
+
+export const section = Sections.ARTICLES;
+const sectionPath = Sections.getPath(section)
 
 export default function Articles({sortedPostsData, curLan, setCurLan}: {
     sortedPostsData: {
-        date: string
-        title: string
-        id: string
-        featured: boolean
-        cover: string
+        id: string,
+        date: string,
+        cover: string,
+        featured: boolean,
+        fallbackLan: Languages,
+        titleForAllLan: string[],
     }[],
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    let features = sortedPostsData.filter(({featured}) => featured)
+    let features = sortedPostsData.filter(({featured}) => featured);
+
     return (
-        <Layout section={sectionName} curLan={curLan} setCurLan={setCurLan}>
+        <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
@@ -34,10 +38,12 @@ export default function Articles({sortedPostsData, curLan, setCurLan}: {
                 {/*Featured*/}
                 {(features.length != 0) && (
                     <Showcase title={"Featured"}>
-                        {features.map(({id, date, title, cover}) => (
+                        {features.map(({id, date, cover, fallbackLan, titleForAllLan}) => (
                             <div key={id}>
-                                <SmallCard title={title} dateString={date} sectionName={sectionName} id={id}
-                                           coverString={cover}/>
+                                <SmallCard
+                                    title={titleForAllLan[curLan] ?? titleForAllLan[fallbackLan]}
+                                    dateString={date} sectionPath={sectionPath} id={id}
+                                    coverString={cover} curLan={curLan}/>
                             </div>
                         ))}
                     </Showcase>
@@ -45,11 +51,13 @@ export default function Articles({sortedPostsData, curLan, setCurLan}: {
 
                 {/* All */}
                 <Showcase title={"All"}>
-                    {sortedPostsData.map(({id, date, title, cover}) => (
+                    {sortedPostsData.map(({id, date, fallbackLan, cover, titleForAllLan}) => (
                         <div key={id}>
                             <div key={id}>
-                                <SmallCard title={title} dateString={date} sectionName={sectionName} id={id}
-                                           coverString={cover}/>
+                                <SmallCard
+                                    title={titleForAllLan[curLan] ?? titleForAllLan[fallbackLan]}
+                                    dateString={date} sectionPath={sectionPath} id={id}
+                                    coverString={cover} curLan={curLan}/>
                             </div>
                         </div>
                     ))}
@@ -60,7 +68,7 @@ export default function Articles({sortedPostsData, curLan, setCurLan}: {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const sortedPostsData = getSortedPostsData(sectionName)
+    const sortedPostsData = getSortedPostsData(section)
     return {
         props: {
             sortedPostsData

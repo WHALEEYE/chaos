@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Layout, {siteTitle} from '../components/layout'
+import Layout, {siteTitle} from '../components/Layout'
 import React from "react";
 import Link from "next/link";
-import Showcase from "../components/showcase";
+import Showcase from "../components/Showcase";
 import {Languages, Sections} from "../lib/enums";
 
 

@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Layout, {siteTitle} from '../../components/layout'
+import Layout, {siteTitle} from '../../components/Layout'
 import {getSortedPostsData} from '../../lib/posts'
 import {GetStaticProps} from 'next'
 import React from "react";
-import Showcase from "../../components/showcase";
-import SmallCard from "../../components/small_card";
+import Showcase from "../../components/Showcase";
+import SmallCard from "../../components/SmallCard";
 import {Languages, Sections} from "../../lib/enums";
 
 export const section = Sections.TALKS;

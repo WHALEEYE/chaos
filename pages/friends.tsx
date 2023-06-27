@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Layout, {siteTitle} from '../components/layout'
+import Layout, {siteTitle} from '../components/Layout'
 import React from "react";
 import {Languages, Sections} from "../lib/enums";
 

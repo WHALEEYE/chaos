@@ -41,6 +41,7 @@ export function getSortedPostsData(section: Sections) {
             const matterResult = matter(xArray[2].trim());
             const lan = parseLanguage(xArray[1]);
             if (fallbackLan === null) fallbackLan = lan;
+            console.log("debug")
             titleForAllLan[lan] = matterResult.data.title;
         }
 

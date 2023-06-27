@@ -6,7 +6,7 @@ import html from 'remark-html';
 import {Languages, Sections} from "./enums";
 
 const postsDirectory = path.join(process.cwd(), 'posts');
-const languageRE = />>>([A-Z]*)\r\n(.*?)>>>/gs
+const languageRE = />>>([A-Z]*)\s*(.*?)>>>/gs;
 
 function parseLanguage(lanString: string) {
     const processedString = lanString.trim().toUpperCase();

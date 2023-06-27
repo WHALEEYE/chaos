@@ -6,7 +6,7 @@ import html from 'remark-html';
 import {Languages, Sections} from "./enums";
 
 const postsDirectory = path.join(process.cwd(), 'posts');
-const languageRE = />>>([A-Z]*)\r\n(.*?)>>>/gs
+const languageRE = />>>([A-Z]*)\r\n(.*?)>>>/gs;
 
 function parseLanguage(lanString: string) {
     const processedString = lanString.trim().toUpperCase();
@@ -35,6 +35,8 @@ export function getSortedPostsData(section: Sections) {
 
         let titleForAllLan: string[] = new Array(Languages.__LENGTH).fill(null);
         let fallbackLan: Languages | null = null;
+
+        console.log(totalMatterResult);
 
         let xArray;
         while (xArray = languageRE.exec(fileContents)) {

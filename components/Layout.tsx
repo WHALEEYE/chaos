@@ -117,8 +117,8 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 </div>
                                 <div className={"text-3xl font-extrabold"}>{name}</div>
                                 <div className={"text-gray-400"}>{`Control freak.`}</div>
-                                <div>UG Student @ <Link href={"https://www.sustech.edu.cn/en/"}><span
-                                    className={"link-ina"}>SUSTech</span></Link></div>
+                                <div>MSCS Student @ <Link href={"https://www.northwestern.edu/"}><span
+                                    className={"link-ina"}>NU</span></Link></div>
                             </div>
 
                             <div className={"grid gap-y-2 justify-items-start"}>
@@ -155,8 +155,8 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                     </div>
                                 </div>
                                 <div>
-                                    <Link href={"mailto:jinzx2019@mail.sustech.edu.cn"}>
-                                        <div className={"link-ina"}>Contact Me</div>
+                                    <Link href={"mailto:isaacjin@u.northwestern.edu"}>
+                                        <div className={"link-ina"}>{curLan === Languages.ENG ? "Contact Me" : "邮件联系"}</div>
                                     </Link>
                                 </div>
                             </div>

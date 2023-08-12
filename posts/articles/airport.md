@@ -18,8 +18,7 @@ In this article, we will build an airport from start.
 
 ##### Requirements & Environments
 
-- A **VPS**. I have chosen [DigitalOcean](https://www.digitalocean.com/) because they offered me a coupon of 100
-  dollars.
+- A **VPS**. I have chosen [DigitalOcean](https://www.digitalocean.com/) because they offered me a $100 coupon.
 - **Clash**. I used [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg/releases), which is a Clash
   with GUI.
 - **Docker** Environment

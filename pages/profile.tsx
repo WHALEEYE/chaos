@@ -27,13 +27,17 @@ export default function Profile({curLan, setCurLan}: {
                 {/* Education */}
                 <Showcase title={"Education"}>
                     <div>
-                        <div><b>Undergraduate Student of Computer Science</b>, <i>Southern University of Science and
+                        <div><b>M.S. in Computer Science</b>, <i>Northwestern University</i></div>
+                        <div className={"light-text"}>Sept, 2023 - Dec, 2024 (Expected)</div>
+                    </div>
+                    <div>
+                        <div><b>B.E. in Computer Science and Technology</b>, <i>Southern University of Science and
                             Technology</i></div>
-                        <div className={"light-text"}>2019.9 - 2023.6 (Expected)</div>
+                        <div className={"light-text"}>Graduated Jun, 2023</div>
                     </div>
                     <div>
                         <div><b>Visiting International Student</b>, <i>University of Wisconsin - Madison</i></div>
-                        <div className={"light-text"}>2022.9 - 2023.1</div>
+                        <div className={"light-text"}>Sept, 2022 - Jan, 2023</div>
                     </div>
                 </Showcase>
 
@@ -93,19 +97,19 @@ export default function Profile({curLan, setCurLan}: {
                 <Showcase title={"Awards"}>
                     <div>
                         <div><b>SUSTech Outstanding Freshman Scholarship</b>, <i>Second-class Award</i></div>
-                        <div className={"light-text"}>2019.6</div>
+                        <div className={"light-text"}>Jun, 2019</div>
                     </div>
                     <div>
                         <div><b>USTC Hackergame 2021</b>, <i>Rank: 44/2677</i></div>
-                        <div className={"light-text"}>2021.10</div>
+                        <div className={"light-text"}>Oct, 2021</div>
                     </div>
                     <div>
                         <div><b>Guangdong College Students’ CTF Competition</b>, <i>Rank: 37/504</i></div>
-                        <div className={"light-text"}>2022.5</div>
+                        <div className={"light-text"}>May, 2022</div>
                     </div>
                     <div>
                         <div><b>SUSTech Outstanding Student Scholarship</b>, <i>Third-class Award</i></div>
-                        <div className={"light-text"}>2022.9</div>
+                        <div className={"light-text"}>Sept, 2022</div>
                     </div>
                 </Showcase>
             </div>

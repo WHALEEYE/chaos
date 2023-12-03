@@ -19,8 +19,8 @@ export default function SmallCard({title, dateString, sectionPath, id, coverStri
                         <Date dateString={dateString} lan={curLan}/>
                     </div>
                 </div>
-                <div className={"grid"}>
-                    <Image src={coverURL} width={320} height={180} alt={title + " image"}/>
+                <div className={"grid justify-end"}>
+                    <Image src={coverURL} width={208} height={117} alt={title + " image"}/>
                 </div>
             </div>
         </Link>

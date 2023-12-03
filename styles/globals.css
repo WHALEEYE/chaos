@@ -16,7 +16,7 @@
     }
 
     a {
-        @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
+        @apply no-underline text-black
     }
 
     /* large code blocks will be parsed into `pre` tags by remark */
@@ -46,6 +46,10 @@
     .navibutton {
         @apply grid items-center w-10 text-center
     }
+
+    /*.normal-link {*/
+    /*    @apply hover:bg-yellow-300/30 cursor-pointer text-black/60*/
+    /*}*/
 
     .link-ina {
         @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60

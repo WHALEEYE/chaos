@@ -75,15 +75,15 @@ export default function Layout({children, section, curLan, setCurLan}: {
             <div
                 className={"backdrop-blur-lg border-b border-gray-700/20 select-none fixed h-10 inset-x-0 z-10 gap-x-10 flex justify-center bg-gray-300/10"}>
                 <div className={"flex justify-end grow max-w-[1200px]"}>
-                    <div className={"flex items-center grow"}>
+                    <div className={"grow flex items-center"}>
                         <Link href={"/"}>
-                            <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C]"}>
-                                <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}></Image>
+                            <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C] items-center"}>
+                                <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}/>
                                 <div className={"font-extrabold text-2xl"}>{siteTitle}</div>
                             </div>
                         </Link>
                     </div>
-                    <div className={"flex flex-none gap-x-8"}>
+                    <div className={"flex flex-none gap-x-8 items-center"}>
                         <div className={"flex"}>
                             {lanButton}
                             {nightButton}

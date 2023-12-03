@@ -51,14 +51,23 @@ export default function Profile({curLan, setCurLan}: {
                 {/* Projects */}
                 <Showcase title={"Projects"}>
                     <div>
-                        <Link href={"https://github.com/WHALEEYE/weave-editor"}>
-                            <span className={"link-header"}>Weave Editor</span>
+                        <Link href={"https://github.com/WHALEEYE/MicroShield"}>
+                            <span className={"link-header"}>MicroShield</span>
                         </Link>
                         <div className={"light-text"}>
                             <div>An East-West Traffic Capturing and Auto Policy Generating System for Kubernetes.</div>
                             <div>
                                 This is a cloud native security research project supervised by Prof. Yan Chen of NWU.
                             </div>
+                        </div>
+                    </div>
+                    <div>
+                        <Link href={"https://github.com/WHALEEYE/SUSTech-Store-Backend"}>
+                            <span className={"link-header"}>SUSTech Store</span>
+                        </Link>
+                        <div className={"light-text"}>
+                            <div>A second-hand trading platform for SUSTech students.</div>
+                            <div>This is the course project of Object-Oriented Analysis and Design.</div>
                         </div>
                     </div>
                     <div>
@@ -80,15 +89,6 @@ export default function Profile({curLan, setCurLan}: {
                                 like cryptocurrency mining.
                             </div>
                             <div>This is the course project of Computer Security.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <Link href={"https://github.com/WHALEEYE/SUSTech-Store-Backend"}>
-                            <span className={"link-header"}>SUSTech Store</span>
-                        </Link>
-                        <div className={"light-text"}>
-                            <div>A second-hand trading platform for SUSTech students.</div>
-                            <div>This is the course project of Object-Oriented Analysis and Design.</div>
                         </div>
                     </div>
                 </Showcase>

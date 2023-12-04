@@ -156,7 +156,8 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 </div>
                                 <div>
                                     <Link href={"mailto:isaacjin@u.northwestern.edu"}>
-                                        <div className={"link-ina"}>{curLan === Languages.ENG ? "Contact Me" : "邮件联系"}</div>
+                                        <div
+                                            className={"link-ina"}>{curLan === Languages.ENG ? "Contact Me" : "邮件联系"}</div>
                                     </Link>
                                 </div>
                             </div>

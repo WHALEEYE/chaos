@@ -32,9 +32,10 @@ export default function Home({allLatestPostsData, curLan, setCurLan}: {
                     <div>Hello there! Welcome to CHAOS, my personal website.</div>
                     <div>
                         The articles about academic and technical topics will be collected in <Link
-                        href={"/articles"} className={"link-ina"}>articles</Link>, and those about casual, miscellaneous
-                        topics can be seen
-                        in <Link href={"/talks"} className={"link-ina"}>talks</Link>. Feel free to take a look at them.
+                        href={"/articles"} className={"link-ina"}>articles</Link>, and those about casual,
+                        miscellaneous topics can be seen in <Link href={"/talks"}
+                                                                  className={"link-ina"}>talks</Link>. Feel free to
+                        take a look at them.
                     </div>
                     <div>You can see my CV <Link href={"/CV.pdf"} className={"link-ina"}>here</Link> if interested.
                     </div>
@@ -47,12 +48,14 @@ export default function Home({allLatestPostsData, curLan, setCurLan}: {
                                                                            className={"link-ina"}>React</Link> + <Link
                         href={"https://nextjs.org/"} className={"link-ina"}>Next.js</Link> + <Link
                         href={"https://www.typescriptlang.org/"} className={"link-ina"}>TypeScript</Link>,
-                        with <Link href={"https://tailwindcss.com/"} className={"link-ina"}>TailwindCSS</Link> used as
+                        with <Link href={"https://tailwindcss.com/"} className={"link-ina"}>TailwindCSS</Link> used
+                        as
                         the CSS library. The blog is a static website hosted on <Link href={"https://vercel.com/"}
                                                                                       className={"link-ina"}>Vercel</Link>.
                     </div>
                     <div>You can view the GitHub repository of this blog <Link
-                        href={"https://github.com/WHALEEYE/chaos"} className={"link-ina"}>here</Link>. The source code
+                        href={"https://github.com/WHALEEYE/chaos"} className={"link-ina"}>here</Link>. The source
+                        code
                         of this blog is MIT licensed.
                     </div>
                 </Showcase>

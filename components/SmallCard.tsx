@@ -12,7 +12,7 @@ export default function SmallCard({title, dateString, sectionPath, id, coverStri
     return (
         <Link href={blogURL}>
             <div
-                className={"max-w-2xl transition-all hover:duration-250 ease-in-out p-2 grid grid-cols-3 justify-between rounded gap-x-4 hover:text-[#996E5C] hover:cursor-pointer hover:bg-gradient-to-r hover:from-gray-600/5 shadow hover:shadow-lg"}>
+                className={"transition-all hover:duration-250 ease-in-out p-2 grid grid-cols-3 justify-between rounded gap-x-4 hover:text-[#996E5C] hover:cursor-pointer hover:bg-gradient-to-r hover:from-gray-600/5 shadow hover:shadow-lg"}>
                 <div className={"grid col-span-2 content-between"}>
                     <div className={"font-bold text-lg"}>{title}</div>
                     <div className={"light-text"}>
@@ -20,7 +20,7 @@ export default function SmallCard({title, dateString, sectionPath, id, coverStri
                     </div>
                 </div>
                 <div className={"grid justify-end"}>
-                    <Image src={coverURL} width={208} height={117} alt={title + " image"}/>
+                    <Image src={coverURL} width={16} height={9} layout={"responsive"} alt={title + " image"}/>
                 </div>
             </div>
         </Link>

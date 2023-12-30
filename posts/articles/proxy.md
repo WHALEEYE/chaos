@@ -6,7 +6,7 @@ cover: 'vpn.jpg'
 
 >>>ENG
 ---
-title: 'How to Build an Airport from Start'
+title: 'How to Build a Proxy from Start'
 ---
 
 > Part of this article

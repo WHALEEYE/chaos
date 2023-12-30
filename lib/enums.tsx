@@ -15,6 +15,8 @@ export enum Sections {
     __LENGTH,
 }
 
+export const lanNames = ["en", "fr"];
+
 export namespace Sections {
 
     const enNames = ["Home", "Profile", "Articles", "Talks", "Friends"];

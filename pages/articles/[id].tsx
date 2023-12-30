@@ -35,7 +35,9 @@ export default function Post({postData, curLan, setCurLan}: {
         <Head>
             <title>{curPostData.title}</title>
         </Head>
-        <Image src={coverURL} width={1920} height={1080} layout={"responsive"} alt={"cover"}/>
+        <div className={"w-full aspect-video relative"}>
+            <Image src={coverURL} fill alt={"cover"}/>
+        </div>
         <div className={"blog-content"}>
             <div>
                 {languageNotSupported && <LanguageWarningBar lan={curLan}/>}

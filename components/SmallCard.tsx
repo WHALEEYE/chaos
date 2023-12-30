@@ -19,8 +19,8 @@ export default function SmallCard({title, dateString, sectionPath, id, coverStri
                         <Date dateString={dateString} lan={curLan}/>
                     </div>
                 </div>
-                <div className={"grid justify-end"}>
-                    <Image src={coverURL} width={16} height={9} layout={"responsive"} alt={title + " image"}/>
+                <div className={"grid justify-end relative w-full aspect-video"}>
+                    <Image src={coverURL} fill alt={title + " image"}/>
                 </div>
             </div>
         </Link>

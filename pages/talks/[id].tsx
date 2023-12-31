@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import {getAllPostIds, getPostData} from "../../lib/posts";
+import {getAllPostIds, getFullPostData} from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/Date";
 import {GetStaticPaths, GetStaticProps} from "next";
@@ -60,7 +60,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-    const postData = await getPostData(section, params?.id as string)
+    const postData = await getFullPostData(section, params?.id as string)
     return {
         props: {
             postData,

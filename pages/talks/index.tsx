@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../../components/Layout'
-import {getSortedPostsData} from '../../lib/posts'
+import {getSortedBriefPostsData} from '../../lib/posts'
 import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from "../../components/Showcase";
@@ -10,8 +10,8 @@ import {Languages, Sections} from "../../lib/enums";
 export const section = Sections.TALKS;
 const sectionPath = Sections.getPath(section)
 
-export default function Talks({sortedPostsData, curLan, setCurLan}: {
-    sortedPostsData: {
+export default function Talks({sortedBriefPostsData, curLan, setCurLan}: {
+    sortedBriefPostsData: {
         id: string,
         date: string,
         cover: string,
@@ -22,7 +22,7 @@ export default function Talks({sortedPostsData, curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    let features = sortedPostsData.filter(({featured}) => featured)
+    let features = sortedBriefPostsData.filter(({featured}) => featured)
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
@@ -48,7 +48,7 @@ export default function Talks({sortedPostsData, curLan, setCurLan}: {
 
                 {/* All */}
                 <Showcase title={"All"}>
-                    {sortedPostsData.map(({id, date, cover, fallbackLan, titleForAllLan}) => (
+                    {sortedBriefPostsData.map(({id, date, cover, fallbackLan, titleForAllLan}) => (
                         <div key={id}>
                             <div key={id}>
                                 <SmallCard title={titleForAllLan[curLan] ?? titleForAllLan[fallbackLan]}
@@ -64,10 +64,10 @@ export default function Talks({sortedPostsData, curLan, setCurLan}: {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const sortedPostsData = getSortedPostsData(section);
+    const sortedBriefPostsData = getSortedBriefPostsData(section);
     return {
         props: {
-            sortedPostsData
+            sortedBriefPostsData
         }
     }
 }

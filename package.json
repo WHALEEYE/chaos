@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build && npm run",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "toc": "i18next-resources-for-ts toc -i ./locales/en -o ./@types/resources.ts",
+    "interface": "i18next-resources-for-ts interface -i ./locales/en -o ./@types/resources.d.ts"
   },
   "dependencies": {
     "date-fns": "^2.29.2",
     "gray-matter": "^4.0.3",
     "i18next": "^23.7.12",
+    "i18next-resources-for-ts": "^1.4.0",
     "next": "^14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",

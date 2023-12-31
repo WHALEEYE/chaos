@@ -1,5 +1,3 @@
-import assert from "assert";
-
 export enum Languages {
     ENG,
     CHN,
@@ -15,7 +13,7 @@ export enum Sections {
     __LENGTH,
 }
 
-export const lanNames = ["en", "fr"];
+export const localeName = ['en', 'zh'];
 
 export namespace Sections {
 

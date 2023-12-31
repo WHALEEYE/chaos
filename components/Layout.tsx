@@ -2,15 +2,16 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, {ReactNode} from "react";
-import {Languages, Sections, lanNames} from "../lib/enums";
+import {Languages, Sections, localeName} from "../lib/enums";
 import i18n from "../lib/i18n";
+import {useTranslation} from "react-i18next";
 
 export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
 
 function switchLan(curLan: Languages, setCurLan: React.Dispatch<React.SetStateAction<Languages>>) {
     let otherLan = curLan === Languages.CHN ? Languages.ENG : Languages.CHN;
-    i18n.changeLanguage(lanNames[otherLan]).then(() => setCurLan(otherLan));
+    i18n.changeLanguage(localeName[otherLan]).then(() => setCurLan(otherLan));
 }
 
 export default function Layout({children, section, curLan, setCurLan}: {
@@ -19,7 +20,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-
+    const {t} = useTranslation('layout');
     const profileButton = (section === Sections.PROFILE) ?
         <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.PROFILE, curLan)}</div> :
         <Link href={"/profile"}>
@@ -51,7 +52,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
     const lanButton =
         <div onClick={() => switchLan(curLan, setCurLan)}
              className={"navi-unselected font-normal text-center navibutton hover:navi-selected"}>
-            {curLan === Languages.ENG ? "中" : "En"}
+            {t('lang-button')}
         </div>
 
     const nightButton =
@@ -163,7 +164,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 <div>
                                     <Link href={"mailto:isaacjin@u.northwestern.edu"}>
                                         <div
-                                            className={"link-ina"}>{curLan === Languages.ENG ? "Contact Me" : "邮件联系"}</div>
+                                            className={"link-ina"}>{t('contact')}</div>
                                     </Link>
                                 </div>
                             </div>

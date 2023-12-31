@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Layout, {siteTitle} from '../components/Layout'
 import React from "react";
 import {Languages, Sections} from "../lib/enums";
-import {useTranslation} from 'react-i18next';
+import {useTranslation} from "react-i18next";
 
 
 const section = Sections.FRIENDS;
@@ -12,7 +12,8 @@ export default function Friends({curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    const { t, i18n } = useTranslation();
+    const {t } = useTranslation('friends')
+
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
@@ -24,10 +25,6 @@ export default function Friends({curLan, setCurLan}: {
 
                 <div className={"leading-normal"}>
                     <p>These are my friends!</p>
-                </div>
-
-                <div className={"leading-normal"}>
-                    <p>{t('Welcome to React')}</p>
                 </div>
 
                 <div className={"grid gap-y-12"}>

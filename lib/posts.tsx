@@ -15,7 +15,7 @@ function parseLanguage(lanString: string) {
     else throw new Error("Unsupported Language!");
 }
 
-export function getSortedPostsData(section: Sections) {
+export function getSortedBriefPostsData(section: Sections) {
     // Get file names under /posts/{section}
     const sectionDirectory = path.join(postsDirectory, Sections.getPath(section));
     const fileNames = fs.readdirSync(sectionDirectory);
@@ -74,7 +74,7 @@ export function getAllPostIds(section: Sections) {
     return ids;
 }
 
-export async function getPostData(section: Sections, id: string) {
+export async function getFullPostData(section: Sections, id: string) {
     const fullPath = path.join(postsDirectory, Sections.getPath(section), `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf-8');
 
@@ -103,11 +103,11 @@ export async function getPostData(section: Sections, id: string) {
     };
 }
 
-export function getLatestPostsData() {
+export function getLatestBriefPostsData() {
     const sections = [Sections.ARTICLES, Sections.TALKS];
 
     const allLatestPostsData = sections.map((section) => {
-        const sortedPostData = getSortedPostsData(section);
+        const sortedPostData = getSortedBriefPostsData(section);
         const latestPostsData = sortedPostData.slice(0, 3);
 
         return {

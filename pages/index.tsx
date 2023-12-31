@@ -1,26 +1,29 @@
 import Head from 'next/head'
 import Layout, {siteTitle} from '../components/Layout'
-import {getLatestPostsData} from '../lib/posts'
+import {getLatestBriefPostsData} from '../lib/posts'
 import Link from 'next/link'
 import {GetStaticProps} from 'next'
 import React from "react";
 import Showcase from '../components/Showcase'
 import SmallCard from "../components/SmallCard";
 import {Languages, Sections} from "../lib/enums";
+import {useTranslation} from "react-i18next";
 
-export default function Home({allLatestPostsData, curLan, setCurLan}: {
-    allLatestPostsData: {
+export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
+    allLatestBriefPostsData: {
         section: Sections
         posts: {
             id: string,
             date: string,
             cover: string,
-            fallbackLan: Languages, titleForAllLan: string[],
+            fallbackLan: Languages,
+            titleForAllLan: string[],
         }[]
     }[],
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
+    const {t} = useTranslation('index');
     return (
         <Layout section={Sections.HOME} curLan={curLan} setCurLan={setCurLan}>
             <Head>
@@ -61,9 +64,9 @@ export default function Home({allLatestPostsData, curLan, setCurLan}: {
                 </Showcase>
 
                 {/* Latest */}
-                {allLatestPostsData.map(({section, posts}) => (
+                {allLatestBriefPostsData.map(({section, posts}) => (
                     <Showcase
-                        title={(curLan === Languages.ENG ? "Latest " : "新发布") + Sections.getName(section, curLan)}
+                        title={t('latest') + Sections.getName(section, curLan)}
                         key={section}>
                         {posts.map(({id, date, cover, fallbackLan, titleForAllLan}) => (
                             <div key={id}>
@@ -81,10 +84,10 @@ export default function Home({allLatestPostsData, curLan, setCurLan}: {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const allLatestPostsData = getLatestPostsData()
+    const allLatestBriefPostsData = getLatestBriefPostsData()
     return {
         props: {
-            allLatestPostsData
+            allLatestBriefPostsData
         }
     }
 }

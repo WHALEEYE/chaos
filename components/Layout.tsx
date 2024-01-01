@@ -4,10 +4,11 @@ import Link from 'next/link';
 import React, {ReactNode} from "react";
 import {Languages, Sections, localeName} from "../lib/enums";
 import i18n from "../lib/i18n";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 
-export const name = 'Isaac Jin';
 export const siteTitle = 'CHAOS';
+
+const i18nNS = "layout";
 
 function switchLan(curLan: Languages, setCurLan: React.Dispatch<React.SetStateAction<Languages>>) {
     let otherLan = curLan === Languages.CHN ? Languages.ENG : Languages.CHN;
@@ -20,33 +21,29 @@ export default function Layout({children, section, curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    const {t} = useTranslation('layout');
+    const {t} = useTranslation(i18nNS);
     const profileButton = (section === Sections.PROFILE) ?
-        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.PROFILE, curLan)}</div> :
+        <div className={"navi-selected navibutton-wide"}>{t('profile')}</div> :
         <Link href={"/profile"}>
-            <div
-                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.PROFILE, curLan)}</div>
+            <div className={"navi-unselected hover:navi-selected navibutton-wide"}>{t('profile')}</div>
         </Link>
 
     const articleButton = (section === Sections.ARTICLES) ?
-        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.ARTICLES, curLan)}</div> :
+        <div className={"navi-selected navibutton-wide"}>{t('articles')}</div> :
         <Link href={"/articles"}>
-            <div
-                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.ARTICLES, curLan)}</div>
+            <div className={"navi-unselected hover:navi-selected navibutton-wide"}>{t('articles')}</div>
         </Link>
 
     const talkButton = (section === Sections.TALKS) ?
-        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.TALKS, curLan)}</div> :
+        <div className={"navi-selected navibutton-wide"}>{t('talks')}</div> :
         <Link href={"/talks"}>
-            <div
-                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.TALKS, curLan)}</div>
+            <div className={"navi-unselected hover:navi-selected navibutton-wide"}>{t('talks')}</div>
         </Link>
 
     const friendButton = (section === Sections.FRIENDS) ?
-        <div className={"navi-selected navibutton-wide"}>{Sections.getName(Sections.FRIENDS, curLan)}</div> :
+        <div className={"navi-selected navibutton-wide"}>{t('friends')}</div> :
         <Link href={"/friends"}>
-            <div
-                className={"navi-unselected hover:navi-selected navibutton-wide"}>{Sections.getName(Sections.FRIENDS, curLan)}</div>
+            <div className={"navi-unselected hover:navi-selected navibutton-wide"}>{t('friends')}</div>
         </Link>
 
     const lanButton =
@@ -62,7 +59,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
     return (
         <div className={"grid gap-10"}>
             <Head>
-                <link rel="icon" href="/favicon.svg"/>
+                <link rel="icon" href="/icons/favicon.svg"/>
                 <meta
                     name="description"
                     content="Isaac Jin's personal blog"
@@ -85,7 +82,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
                     <div className={"grow flex items-center"}>
                         <Link href={"/"}>
                             <div className={"cursor-pointer flex gap-2 text-black hover:text-[#996E5C] items-center"}>
-                                <Image src={"/favicon.svg"} width={"28"} height={"28"} alt={"icon"}/>
+                                <Image src={"/icons/icon-b.svg"} width={"28"} height={"28"} alt={"icon"}/>
                                 <div className={"font-extrabold text-2xl"}>{siteTitle}</div>
                             </div>
                         </Link>
@@ -93,7 +90,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
                     <div className={"flex flex-none gap-x-8 items-center"}>
                         <div className={"flex"}>
                             {lanButton}
-                            {nightButton}
+                            {/*{nightButton}*/}
                         </div>
                         {profileButton}
                         {articleButton}
@@ -115,17 +112,20 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 <div>
                                     <Image
                                         priority
-                                        src={"/images/profile.jpg"}
+                                        src={"/images/avatar.jpg"}
                                         className={"rounded-3xl"}
                                         height={"180"}
                                         width={"180"}
-                                        alt={name}
+                                        alt={"avatar"}
                                     />
                                 </div>
-                                <div className={"text-3xl font-extrabold"}>{name}</div>
-                                <div className={"text-gray-400"}>{`Control freak.`}</div>
-                                <div>MSCS Student @ <Link href={"https://www.northwestern.edu/"}><span
-                                    className={"link-ina"}>NU</span></Link></div>
+                                <div className={"text-3xl font-extrabold"}>{t('name')}</div>
+                                <div className={"text-gray-400"}>{t('bios')}</div>
+                                <div>
+                                    <Trans i18nKey={'edu'} ns={i18nNS} components={{
+                                        school: <Link href={"https://www.northwestern.edu/"} className={"link-ina"}/>
+                                    }}/>
+                                </div>
                             </div>
 
                             <div className={"grid gap-y-2 justify-items-start"}>

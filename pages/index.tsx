@@ -7,7 +7,10 @@ import React from "react";
 import Showcase from '../components/Showcase'
 import SmallCard from "../components/SmallCard";
 import {Languages, Sections} from "../lib/enums";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
+
+
+const i18nNS = 'index';
 
 export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
     allLatestBriefPostsData: {
@@ -23,44 +26,34 @@ export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    const {t} = useTranslation('index');
+    const {t} = useTranslation(i18nNS);
     return (
         <Layout section={Sections.HOME} curLan={curLan} setCurLan={setCurLan}>
             <Head>
                 <title>{siteTitle}</title>
             </Head>
             <div className={"grid gap-y-8"}>
-                {/* bios */}
+                {/* Intro */}
                 <div className={"grid gap-y-2"}>
-                    <div>Hello there! Welcome to CHAOS, my personal website.</div>
-                    <div>
-                        The articles about academic and technical topics will be collected in <Link
-                        href={"/articles"} className={"link-ina"}>articles</Link>, and those about casual,
-                        miscellaneous topics can be seen in <Link href={"/talks"}
-                                                                  className={"link-ina"}>talks</Link>. Feel free to
-                        take a look at them.
-                    </div>
-                    <div>You can see my CV <Link href={"/CV.pdf"} className={"link-ina"}>here</Link> if interested.
-                    </div>
-                    <div>Have a good time! =)</div>
+                    <Trans i18nKey={"intro"} ns={i18nNS} components={{
+                        articles: <Link href={"/articles"} className={"link-ina"}/>,
+                        talks: <Link href={"/talks"} className={"link-ina"}/>,
+                        cv: <Link href={"/CV.pdf"} className={"link-ina"}/>,
+                        div: <div/>
+                    }}/>
                 </div>
 
                 {/* About This Blog */}
-                <Showcase title={"About This Blog"}>
-                    <div>This blog is totally built from sketch with <Link href={"https://react.dev/"}
-                                                                           className={"link-ina"}>React</Link> + <Link
-                        href={"https://nextjs.org/"} className={"link-ina"}>Next.js</Link> + <Link
-                        href={"https://www.typescriptlang.org/"} className={"link-ina"}>TypeScript</Link>,
-                        with <Link href={"https://tailwindcss.com/"} className={"link-ina"}>TailwindCSS</Link> used
-                        as
-                        the CSS library. The blog is a static website hosted on <Link href={"https://vercel.com/"}
-                                                                                      className={"link-ina"}>Vercel</Link>.
-                    </div>
-                    <div>You can view the GitHub repository of this blog <Link
-                        href={"https://github.com/WHALEEYE/chaos"} className={"link-ina"}>here</Link>. The source
-                        code
-                        of this blog is MIT licensed.
-                    </div>
+                <Showcase title={t('aboutTitle')}>
+                    <Trans i18nKey="about" ns={i18nNS} components={{
+                        react: <Link href="https://react.dev/" className="link-ina">React</Link>,
+                        nextjs: <Link href="https://nextjs.org/" className="link-ina">Next.js</Link>,
+                        ts: <Link href="https://www.typescriptlang.org/" className="link-ina">TypeScript</Link>,
+                        tailwind: <Link href="https://tailwindcss.com/" className="link-ina">TailwindCSS</Link>,
+                        vercel: <Link href="https://vercel.com/" className="link-ina">Vercel</Link>,
+                        div: <div/>,
+                        repo: <Link href={"https://github.com/WHALEEYE/chaos"} className={"link-ina"}/>,
+                    }}/>
                 </Showcase>
 
                 {/* Latest */}

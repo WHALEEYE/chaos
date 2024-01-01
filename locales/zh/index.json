@@ -1,3 +1,6 @@
 {
-  "latest": "新发布"
+  "latest": "新发布",
+  "intro": "<div>你好！欢迎来到 CHAOS ，我的个人博客。</div><div>关于学术和技术话题的文章，请进入<articles>文章</articles>板块浏览。关于休闲、杂谈的内容，可以进入<talks>杂谈</talks>板块。欢迎各位的浏览和指导！</div><div>如果感兴趣的话，可以在<cv>这里</cv>查看我的简历。</div><div>祝你度过愉快的时光！=)</div>",
+  "about": "<div>该博客基于 <react/> ，<nextjs/> 和 <ts/> 搭建，并使用 <tailwind/> 作为前端 CSS 库，未采用其他现有博客模板。该博客为静态网站，目前使用 <vercel/> 的服务进行托管。</div><div>你可以点击<repo>此处</repo>查看该博客的 GitHub 仓库和所有源码。</div>",
+  "aboutTitle": "关于本博客"
 }

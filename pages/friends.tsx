@@ -12,7 +12,7 @@ export default function Friends({curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
-    const {t } = useTranslation('friends')
+    const {t} = useTranslation('friends')
 
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>

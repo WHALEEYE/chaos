@@ -1,1 +1,55 @@
-{}
+{
+  "edu": {
+    "title": "Education",
+    "nu": {
+      "degree": "M.S. in Computer Science",
+      "name": "Northwestern University",
+      "period": "Sept, 2023 - Dec, 2024"
+    },
+    "sustech": {
+      "degree": "B.E. in Computer Science and Technology",
+      "name": "Southern University of Science and Technology",
+      "period": "Sept, 2019 - Jun, 2023"
+    },
+    "wisc": {
+      "degree": "Visiting International Student",
+      "name": "University of Wisconsin - Madison",
+      "period": "Sept, 2022 - Jan, 2023"
+    }
+  },
+  "research": {
+    "title": "Research Interests",
+    "content": "<div>Now I'm mainly interested in some topics in the research fields of computer security, including <b>system security</b>, <b>network security</b> and <b>cloud native security</b>.</div>"
+  },
+  "projects": {
+    "title": "Projects",
+    "ms": {
+      "name": "MicroShield",
+      "des": [
+        "An East-West Traffic Capturing and Auto Policy Generating System for Kubernetes",
+        "This is a cloud native security research project supervised by Prof. Yan Chen of NU."
+      ]
+    },
+    "store": {
+      "name": "SUSTech Store",
+      "des": [
+        "A second-hand trading platform for SUSTech students.",
+        "This is the course project of Object-Oriented Analysis and Design."
+      ]
+    },
+    "spl": {
+      "name": "SPL Compiler",
+      "des": [
+        "A compiler for SPL, which is short for SUSTech Programming Language.",
+        "This is the course project of Compilers."
+      ]
+    },
+    "hc": {
+      "name": "Hash Checker for Web Applications",
+      "des": [
+        "A lightweight plugin to detect pages containing Wasm and trace them to avoid threats like cryptocurrency mining.",
+        "This is the course project of Computer Security."
+      ]
+    }
+  }
+}

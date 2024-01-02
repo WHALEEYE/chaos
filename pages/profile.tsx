@@ -4,8 +4,10 @@ import React from "react";
 import Link from "next/link";
 import Showcase from "../components/Showcase";
 import {Languages, Sections} from "../lib/enums";
+import {Trans, useTranslation} from "react-i18next";
+import ProjectDetail from "../components/profile/ProjectDetail";
 
-
+const i18nNS = 'profile';
 const section = Sections.PROFILE;
 const sectionPath = Sections.getPath(section)
 
@@ -13,6 +15,28 @@ export default function Profile({curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
+
+    const {t} = useTranslation(i18nNS);
+
+    const projects = [
+        {
+            key: 'ms',
+            link: 'https://github.com/WHALEEYE/MicroShield'
+        },
+        {
+            key: 'store',
+            link: 'https://github.com/WHALEEYE/SUSTech-Store-Backend'
+        },
+        {
+            key: 'spl',
+            link: 'https://github.com/dandansamax/SPL-Compiler'
+        },
+        {
+            key: 'hc',
+            link: 'https://github.com/WHALEEYE/Hash-Checker'
+        }
+    ];
+
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
@@ -25,72 +49,39 @@ export default function Profile({curLan, setCurLan}: {
                     href={"/CV.pdf"}><span className={"link-ina"}>here</span></Link>.
                 </div>
                 {/* Education */}
-                <Showcase title={"Education"}>
+                <Showcase title={t('edu.title')}>
                     <div>
-                        <div><b>M.S. in Computer Science</b>, <i>Northwestern University</i></div>
-                        <div className={"light-text"}>Sept, 2023 - Dec, 2024 (Expected)</div>
+                        <div><b>{t('edu.nu.degree')}</b>, <i>{t('edu.nu.name')}</i></div>
+                        <div className={"light-text"}>{t('edu.nu.period')}</div>
                     </div>
                     <div>
-                        <div><b>B.E. in Computer Science and Technology</b>, <i>Southern University of Science and
-                            Technology</i></div>
-                        <div className={"light-text"}>Graduated Jun, 2023</div>
+                        <div><b>{t('edu.sustech.degree')}</b>, <i>{t('edu.sustech.name')}</i></div>
+                        <div className={"light-text"}>{t('edu.sustech.period')}</div>
                     </div>
                     <div>
-                        <div><b>Visiting International Student</b>, <i>University of Wisconsin - Madison</i></div>
-                        <div className={"light-text"}>Sept, 2022 - Jan, 2023</div>
+                        <div><b>{t('edu.wisc.degree')}</b>, <i>{t('edu.wisc.name')}</i></div>
+                        <div className={"light-text"}>{t('edu.wisc.period')}</div>
                     </div>
                 </Showcase>
 
                 {/* Research Interests */}
-                <Showcase title={"Research Interests"}>
-                    <div>Now {`I'm`} mainly interested in some topics in the research fields of computer security,
-                        including <b>system security</b>, <b>network security</b> and <b>cloud native security</b>.
-                    </div>
+                <Showcase title={t('research.title')}>
+                    <Trans i18nKey={"research.content"} ns={i18nNS} components={{
+                        div: <div/>,
+                        b: <b/>
+                    }}/>
                 </Showcase>
 
                 {/* Projects */}
-                <Showcase title={"Projects"}>
-                    <div>
-                        <Link href={"https://github.com/WHALEEYE/MicroShield"}>
-                            <span className={"link-header"}>MicroShield</span>
-                        </Link>
-                        <div className={"light-text"}>
-                            <div>An East-West Traffic Capturing and Auto Policy Generating System for Kubernetes.</div>
-                            <div>
-                                This is a cloud native security research project supervised by Prof. Yan Chen of NWU.
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <Link href={"https://github.com/WHALEEYE/SUSTech-Store-Backend"}>
-                            <span className={"link-header"}>SUSTech Store</span>
-                        </Link>
-                        <div className={"light-text"}>
-                            <div>A second-hand trading platform for SUSTech students.</div>
-                            <div>This is the course project of Object-Oriented Analysis and Design.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <Link href={"https://github.com/dandansamax/SPL-Compiler"}>
-                            <span className={"link-header"}>SPL Compiler</span>
-                        </Link>
-                        <div className={"light-text"}>
-                            <div>A compiler for SPL, which is short for SUSTech Programming Language.</div>
-                            <div>This is the course project of Compilers.</div>
-                        </div>
-                    </div>
-                    <div>
-                        <Link href={"https://github.com/WHALEEYE/Hash-Checker"}>
-                            <span className={"link-header"}>Hash Checker for Web Applications</span>
-                        </Link>
-                        <div className={"light-text"}>
-                            <div>
-                                A lightweight plugin to detect pages containing Wasm and trace them to avoid threats
-                                like cryptocurrency mining.
-                            </div>
-                            <div>This is the course project of Computer Security.</div>
-                        </div>
-                    </div>
+                <Showcase title={t('projects.title')}>
+                    {projects.map(project => (
+                        <ProjectDetail
+                            key={project.key}
+                            projectName={t(`projects.${project.key}.name`)}
+                            projectDesc={t(`projects.${project.key}.des`, {returnObjects: true})}
+                            githubLink={project.link}
+                        />
+                    ))}
                 </Showcase>
 
                 {/* Awards */}

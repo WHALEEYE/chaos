@@ -38,7 +38,7 @@ export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
                     <Trans i18nKey={"intro"} ns={i18nNS} components={{
                         articles: <Link href={"/articles"} className={"link-ina"}/>,
                         talks: <Link href={"/talks"} className={"link-ina"}/>,
-                        cv: <Link href={"/CV.pdf"} className={"link-ina"}/>,
+                        cv: <Link href={"/files/CV.pdf"} className={"link-ina"}/>,
                         div: <div/>
                     }}/>
                 </div>

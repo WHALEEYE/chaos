@@ -1,4 +1,5 @@
 {
+  "intro": "This page is my profile containing some of my brief information. You can check the full CV <cv>here</cv>.",
   "edu": {
     "title": "Education",
     "nu": {
@@ -50,6 +51,29 @@
         "A lightweight plugin to detect pages containing Wasm and trace them to avoid threats like cryptocurrency mining.",
         "This is the course project of Computer Security."
       ]
+    }
+  },
+  "awards": {
+    "title": "Awards",
+    "freshman": {
+      "title": "SUSTech Outstanding Freshman Scholarship",
+      "subTitle": "Second-class Award",
+      "date": "Jun, 2019"
+    },
+    "hg2021": {
+      "title": "USTC Hackergame 2021",
+      "subTitle": "Rank: 44/2677",
+      "date": "Oct, 2021"
+    },
+    "ctf2022": {
+      "title": "Guangdong College Students’ CTF Competition",
+      "subTitle": "Rank: 37/504",
+      "date": "May, 2022"
+    },
+    "outstanding": {
+      "title": "SUSTech Outstanding Student Scholarship",
+      "subTitle": "Third-class Award",
+      "date": "Sept, 2022"
     }
   }
 }

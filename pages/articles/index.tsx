@@ -6,6 +6,7 @@ import React from "react";
 import Showcase from "../../components/Showcase";
 import SmallCard from "../../components/SmallCard";
 import {Languages, Sections} from "../../lib/enums";
+import {Trans, useTranslation} from "react-i18next";
 
 
 export const section = Sections.ARTICLES;
@@ -24,6 +25,8 @@ export default function Articles({sortedBriefPostsData, curLan, setCurLan}: {
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
     let features = sortedBriefPostsData.filter(({featured}) => featured);
+    const i18nNS = 'articles';
+    const {t} = useTranslation(i18nNS);
 
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
@@ -33,11 +36,11 @@ export default function Articles({sortedBriefPostsData, curLan, setCurLan}: {
 
             {/* Brief information on the right */}
             <div className={"grid gap-y-8"}>
-                <div>This is the homepage of articles.</div>
+                <div><Trans i18nKey={"intro"} ns={i18nNS}/></div>
 
                 {/*Featured*/}
                 {(features.length != 0) && (
-                    <Showcase title={"Featured"}>
+                    <Showcase title={t('feat')}>
                         {features.map(({id, date, cover, fallbackLan, titleForAllLan}) => (
                             <div key={id}>
                                 <SmallCard
@@ -50,7 +53,7 @@ export default function Articles({sortedBriefPostsData, curLan, setCurLan}: {
                 )}
 
                 {/* All */}
-                <Showcase title={"All"}>
+                <Showcase title={t('all')}>
                     {sortedBriefPostsData.map(({id, date, fallbackLan, cover, titleForAllLan}) => (
                         <div key={id}>
                             <div key={id}>

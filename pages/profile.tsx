@@ -5,7 +5,6 @@ import Link from "next/link";
 import Showcase from "../components/Showcase";
 import {Languages, Sections} from "../lib/enums";
 import {Trans, useTranslation} from "react-i18next";
-import ProjectDetail from "../components/profile/ProjectDetail";
 
 const i18nNS = 'profile';
 const section = Sections.PROFILE;
@@ -17,6 +16,8 @@ export default function Profile({curLan, setCurLan}: {
 }) {
 
     const {t} = useTranslation(i18nNS);
+
+    const edu = ["nu", "sustech", "wisc"];
 
     const projects = [
         {
@@ -37,6 +38,8 @@ export default function Profile({curLan, setCurLan}: {
         }
     ];
 
+    const awards = ["freshman", "hg2021", "ctf2022", "outstanding"];
+
     return (
         <Layout section={section} curLan={curLan} setCurLan={setCurLan}>
             <Head>
@@ -45,23 +48,18 @@ export default function Profile({curLan, setCurLan}: {
 
             <div className={"grid gap-y-8"}>
                 <div>
-                    This page is my profile containing some of my brief information. You can check the full CV <Link
-                    href={"/CV.pdf"}><span className={"link-ina"}>here</span></Link>.
+                    <Trans i18nKey={"intro"} ns={i18nNS} components={{
+                        cv: <Link href={"/files/CV.pdf"} className={"link-ina"}/>,
+                    }}/>
                 </div>
                 {/* Education */}
                 <Showcase title={t('edu.title')}>
-                    <div>
-                        <div><b>{t('edu.nu.degree')}</b>, <i>{t('edu.nu.name')}</i></div>
-                        <div className={"light-text"}>{t('edu.nu.period')}</div>
-                    </div>
-                    <div>
-                        <div><b>{t('edu.sustech.degree')}</b>, <i>{t('edu.sustech.name')}</i></div>
-                        <div className={"light-text"}>{t('edu.sustech.period')}</div>
-                    </div>
-                    <div>
-                        <div><b>{t('edu.wisc.degree')}</b>, <i>{t('edu.wisc.name')}</i></div>
-                        <div className={"light-text"}>{t('edu.wisc.period')}</div>
-                    </div>
+                    {edu.map(edu => (
+                        <div key={edu}>
+                            <div><b>{t(`edu.${edu}.degree`)}</b>, <i>{t(`edu.${edu}.name`)}</i></div>
+                            <div className={"light-text"}>{t(`edu.${edu}.period`)}</div>
+                        </div>
+                    ))}
                 </Showcase>
 
                 {/* Research Interests */}
@@ -75,33 +73,28 @@ export default function Profile({curLan, setCurLan}: {
                 {/* Projects */}
                 <Showcase title={t('projects.title')}>
                     {projects.map(project => (
-                        <ProjectDetail
-                            key={project.key}
-                            projectName={t(`projects.${project.key}.name`)}
-                            projectDesc={t(`projects.${project.key}.des`, {returnObjects: true})}
-                            githubLink={project.link}
-                        />
+                        <div key={project.key}>
+                            <Link href={project.link}>
+                                <span className={"link-header"}>{t(`projects.${project.key}.name`)}</span>
+                            </Link>
+                            <div className={"light-text"}>
+                                {(t(`projects.${project.key}.des`, {returnObjects: true}) as string[])
+                                    .map((desc, index) => (
+                                        <div key={index}>{desc}</div>
+                                    ))}
+                            </div>
+                        </div>
                     ))}
                 </Showcase>
 
                 {/* Awards */}
-                <Showcase title={"Awards"}>
-                    <div>
-                        <div><b>SUSTech Outstanding Freshman Scholarship</b>, <i>Second-class Award</i></div>
-                        <div className={"light-text"}>Jun, 2019</div>
-                    </div>
-                    <div>
-                        <div><b>USTC Hackergame 2021</b>, <i>Rank: 44/2677</i></div>
-                        <div className={"light-text"}>Oct, 2021</div>
-                    </div>
-                    <div>
-                        <div><b>Guangdong College Students’ CTF Competition</b>, <i>Rank: 37/504</i></div>
-                        <div className={"light-text"}>May, 2022</div>
-                    </div>
-                    <div>
-                        <div><b>SUSTech Outstanding Student Scholarship</b>, <i>Third-class Award</i></div>
-                        <div className={"light-text"}>Sept, 2022</div>
-                    </div>
+                <Showcase title={t('awards.title')}>
+                    {awards.map(award => (
+                        <div key={award}>
+                            <div><b>{t(`awards.${award}.title`)}</b>, <i>{t(`awards.${award}.subTitle`)}</i></div>
+                            <div className={"light-text"}>{t(`awards.${award}.date`)}</div>
+                        </div>
+                    ))}
                 </Showcase>
             </div>
         </Layout>

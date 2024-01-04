@@ -22,13 +22,6 @@ export default function Friends({curLan, setCurLan}: {
 
             {/* Brief information on the right */}
             <div className={"grid gap-y-4"}>
-
-                <div className={"leading-normal"}>
-                    <p>These are my friends!</p>
-                </div>
-
-                <div className={"grid gap-y-12"}>
-                </div>
             </div>
         </Layout>
     )

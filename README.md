@@ -61,13 +61,13 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
     - [x] Compile from Markdown to HTML
     - [x] Adjusted Style of Components
 
-### 👨‍💻 Version 1.0
+### 🎉 Version 1.0
 
 - [x] Fit Different Resolutions on Desktop Side
-- [ ] Night Mode
 - [x] Article Covers
+- [x] Bilingual Support
 
-### 🔮 Version 2.0
+### 👨‍💻 Version 2.0
 
 - [ ] Custom Components in Blog
 - [x] Custom Blog Meta Info
@@ -76,7 +76,7 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 ### 🔮 Version 3.0
 
 - [ ] Refactor
-- [ ] Bilingual Support
+- [ ] Night Mode
 - [ ] Mobile Support
 
 ### 🔮 Version 4.0

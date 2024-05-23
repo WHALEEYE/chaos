@@ -16,8 +16,6 @@ it to create your own blog, just [use template](https://github.com/WHALEEYE/chao
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 

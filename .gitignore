@@ -38,3 +38,11 @@ next-env.d.ts
 .idea/
 
 .scannerwork/
+
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+

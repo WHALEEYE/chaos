@@ -13,15 +13,37 @@ it to create your own blog, just [use template](https://github.com/WHALEEYE/chao
 
 ## Getting Started
 
-First, run the development server:
+You can run this project with `yarn` (recommended) or `npm`.
+
+### Yarn
+
+This project uses the next version of yarn. Therefore, it's important to install yarn according to the [official guide](https://yarnpkg.com/getting-started/install).
+
+After installing yarn, you can install the dependencies.
+
+```bash
+yarn install
+```
+
+Then you can run the development server.
 
 ```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Npm
 
-You can start editing the files. The page will auto-updates as you edit.
+If you choose npm, you need to install the dependencies first.
+
+```bash
+npm install
+```
+
+Then you can run the development server:
+
+```bash
+npm run dev
+```
 
 ## Learn More
 

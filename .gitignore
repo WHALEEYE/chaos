@@ -39,10 +39,11 @@ next-env.d.ts
 
 .scannerwork/
 
+.pnp.*
 .yarn/*
-!.yarn/cache
-!.yarn/releases
+!.yarn/patches
 !.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
 !.yarn/versions
 

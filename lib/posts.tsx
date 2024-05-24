@@ -1,12 +1,22 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import {remark} from "remark";
-import html from 'remark-html';
 import {Languages, Sections} from "./enums";
+import showdown from "showdown";
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 const languageRE = />>>([A-Z]*)\s*(.*?)>>>/gs;
+
+// add custom class name to paragraph with image
+showdown.extension('paragraphImageClass', function() {
+    return [{
+        type: 'output',
+        regex: /<p>(.*?)<img(.*?)\/>(.*?)<\/p>/g,
+        replace: '<p class="image-paragraph">$1<img$2/>$3</p>'
+    }];
+});
+
+const converter = new showdown.Converter({extensions: ['paragraphImageClass']});
 
 function parseLanguage(lanString: string) {
     const processedString = lanString.trim().toUpperCase();
@@ -86,8 +96,8 @@ export async function getFullPostData(section: Sections, id: string) {
     let xArray;
     while (xArray = languageRE.exec(fileContents)) {
         const matterResult = matter(xArray[2].trim());
-        const processedContent = await remark().use(html).process(matterResult.content)
-        const contentHtml = processedContent.toString();
+        const contentHtml = converter.makeHtml(matterResult.content);
+
         const lan = parseLanguage(xArray[1]);
         if (fallbackLan === null) fallbackLan = lan;
         contentForAllLan[lan] = {title: matterResult.data.title, contentHtml}

@@ -87,4 +87,8 @@
     .blog-content {
         @apply select-text caret-transparent selection:bg-cyan-200 gap-y-4 grid
     }
+
+    .image-paragraph {
+        @apply flex justify-center
+    }
 }

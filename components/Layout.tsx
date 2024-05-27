@@ -141,17 +141,17 @@ export default function Layout({children, section, curLan, setCurLan}: {
                             <div className={"grid gap-y-2 justify-items-start"}>
                                 <div className={"flex gap-x-4"}>
                                     <div>
-                                        <Link href={"https://twitter.com/Whale__Eye"}>
-                                            <Image src={"/icons/twitter-icon.svg"} className={"cursor-pointer"}
+                                        <Link href={"https://x.com/Whale__Eye"}>
+                                            <Image src={"/icons/x-icon.svg"} className={"cursor-pointer"}
                                                    width={"30"}
-                                                   height={"30"} alt={"GitHub"}></Image>
+                                                   height={"30"} alt={"X"}></Image>
                                         </Link>
                                     </div>
                                     <div>
                                         <Link href={"https://www.github.com/WHALEEYE"}>
                                             <Image src={"/icons/github-icon.svg"} className={"cursor-pointer"}
                                                    width={"30"}
-                                                   height={"30"} alt={"Twitter"}>
+                                                   height={"30"} alt={"Github"}>
                                             </Image>
                                         </Link>
                                     </div>
@@ -166,7 +166,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                     <div>
                                         <Link href={"https://www.facebook.com/whale.swaggy"}>
                                             <Image src={"/icons/facebook-icon.svg"} className={"cursor-pointer"}
-                                                   width={"30"} height={"30"} alt={"Steam"}>
+                                                   width={"30"} height={"30"} alt={"Facebook"}>
                                             </Image>
                                         </Link>
                                     </div>

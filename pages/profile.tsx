@@ -49,7 +49,7 @@ export default function Profile({curLan, setCurLan}: {
             <div className={"grid gap-y-8"}>
                 <div>
                     <Trans i18nKey={"intro"} ns={i18nNS} components={{
-                        cv: <Link href={"/files/CV.pdf"} className={"link-ina"}/>,
+                        cv: <Link href={"/files/CV.pdf"} className={"link-inline"}/>,
                     }}/>
                 </div>
                 {/* Education */}

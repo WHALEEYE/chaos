@@ -36,9 +36,9 @@ export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
                 {/* Intro */}
                 <div className={"grid gap-y-2"}>
                     <Trans i18nKey={"intro"} ns={i18nNS} components={{
-                        articles: <Link href={"/articles"} className={"link-ina"}/>,
-                        talks: <Link href={"/talks"} className={"link-ina"}/>,
-                        cv: <Link href={"/files/CV.pdf"} className={"link-ina"}/>,
+                        articles: <Link href={"/articles"} className={"link-inline"}/>,
+                        talks: <Link href={"/talks"} className={"link-inline"}/>,
+                        cv: <Link href={"/files/CV.pdf"} className={"link-inline"}/>,
                         div: <div/>
                     }}/>
                 </div>
@@ -46,13 +46,13 @@ export default function Home({allLatestBriefPostsData, curLan, setCurLan}: {
                 {/* About This Blog */}
                 <Showcase title={t('aboutTitle')}>
                     <Trans i18nKey="about" ns={i18nNS} components={{
-                        react: <Link href="https://react.dev/" className="link-ina">React</Link>,
-                        nextjs: <Link href="https://nextjs.org/" className="link-ina">Next.js</Link>,
-                        ts: <Link href="https://www.typescriptlang.org/" className="link-ina">TypeScript</Link>,
-                        tailwind: <Link href="https://tailwindcss.com/" className="link-ina">TailwindCSS</Link>,
-                        vercel: <Link href="https://vercel.com/" className="link-ina">Vercel</Link>,
+                        react: <Link href="https://react.dev/" className="link-inline">React</Link>,
+                        nextjs: <Link href="https://nextjs.org/" className="link-inline">Next.js</Link>,
+                        ts: <Link href="https://www.typescriptlang.org/" className="link-inline">TypeScript</Link>,
+                        tailwind: <Link href="https://tailwindcss.com/" className="link-inline">TailwindCSS</Link>,
+                        vercel: <Link href="https://vercel.com/" className="link-inline">Vercel</Link>,
                         div: <div/>,
-                        repo: <Link href={"https://github.com/WHALEEYE/chaos"} className={"link-ina"}/>,
+                        repo: <Link href={"https://github.com/WHALEEYE/chaos"} className={"link-inline"}/>,
                     }}/>
                 </Showcase>
 

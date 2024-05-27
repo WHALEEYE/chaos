@@ -1,12 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect} from "react";
 import {Languages, Sections, localeName} from "../lib/enums";
 import i18n from "../lib/i18n";
 import {Trans, useTranslation} from "react-i18next";
 
-export const siteTitle = 'CHAOS';
+import Prism from "prismjs";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-yaml";
+import "prismjs/components/prism-bash";
+
+export const siteTitle = "CHAOS";
 
 const i18nNS = "layout";
 
@@ -21,6 +26,11 @@ export default function Layout({children, section, curLan, setCurLan}: {
     curLan: Languages,
     setCurLan: React.Dispatch<React.SetStateAction<Languages>>
 }) {
+
+    useEffect(() => {
+        Prism.highlightAll();
+    }, []);
+
     const {t} = useTranslation(i18nNS);
     const profileButton = (section === Sections.PROFILE) ?
         <div className={"navi-selected navibutton-wide"}>{t('profile')}</div> :
@@ -123,7 +133,7 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 <div className={"text-gray-400"}>{t('bios')}</div>
                                 <div>
                                     <Trans i18nKey={'edu'} ns={i18nNS} components={{
-                                        school: <Link href={"https://www.northwestern.edu/"} className={"link-ina"}/>
+                                        school: <Link href={"https://www.northwestern.edu/"} className={"link-inline"}/>
                                     }}/>
                                 </div>
                             </div>
@@ -164,14 +174,14 @@ export default function Layout({children, section, curLan, setCurLan}: {
                                 <div>
                                     <Link href={"mailto:isaacjin@u.northwestern.edu"}>
                                         <div
-                                            className={"link-ina"}>{t('contact')}</div>
+                                            className={"link-inline"}>{t('contact')}</div>
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Brief information on the right */}
+                    {/* Main content */}
                     <div className={"col-span-4 ml-20"}>
                         <main>{children}</main>
                     </div>

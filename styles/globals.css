@@ -1,3 +1,5 @@
+@import "prismjs/themes/prism.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +23,7 @@
 
     /* large code blocks will be parsed into `pre` tags by remark */
     pre {
-        @apply bg-gray-600/5 rounded shadow-inner p-2
+        @apply rounded p-2
     }
 
     /* all code blocks will be parsed into `code` tags by remark */
@@ -36,10 +38,6 @@
         font-family: Trebuchet MS, Georgia, Microsoft YaHei UI, SimHei, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         line-height: 1.6;
         font-size: 18px;
-    }
-
-    img {
-        max-width: 100%;
     }
 }
 
@@ -60,7 +58,7 @@
         @apply grid items-center w-10 text-center
     }
 
-    .link-ina {
+    .link-inline {
         @apply underline hover:bg-yellow-300/30 cursor-pointer text-black/60
     }
 

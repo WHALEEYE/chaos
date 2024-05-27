@@ -14,7 +14,7 @@ export default function SmallCard({title, dateString, sectionPath, id, coverStri
             <div
                 className={"transition-all hover:duration-250 ease-in-out p-2 grid grid-cols-3 justify-between rounded gap-x-4 hover:text-[#996E5C] hover:cursor-pointer hover:bg-gradient-to-r hover:from-gray-600/5 shadow hover:shadow-lg"}>
                 <div className={"grid col-span-2 content-between"}>
-                    <div className={"font-bold text-lg"}>{title}</div>
+                    <div className={"font-bold text-lg link-title"}>{title}</div>
                     <div className={"light-text"}>
                         <Date dateString={dateString} lan={curLan}/>
                     </div>

@@ -2,21 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import {Languages, Sections} from "./enums";
-import showdown from "showdown";
+import showdown from 'showdown';
+import "./showdownext";
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 const languageRE = />>>([A-Z]*)\s*(.*?)>>>/gs;
 
-// add custom class name to paragraph with image
-showdown.extension('paragraphImageClass', function() {
-    return [{
-        type: 'output',
-        regex: /<p>(.*?)<img(.*?)\/>(.*?)<\/p>/g,
-        replace: '<p class="image-paragraph">$1<img$2/>$3</p>'
-    }];
-});
-
-const converter = new showdown.Converter({extensions: ['paragraphImageClass']});
+const converter = new showdown.Converter({extensions: ["paragraphImageClass", "linkInlineClass"]});
 
 function parseLanguage(lanString: string) {
     const processedString = lanString.trim().toUpperCase();

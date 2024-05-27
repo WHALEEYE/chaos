@@ -10,7 +10,7 @@
     }
 
     img {
-        @apply select-none
+        @apply select-none max-w-full
     }
 
     blockquote {

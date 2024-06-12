@@ -19,7 +19,14 @@ You can run this project with `yarn` (recommended) or `npm`.
 
 This project uses the next version of yarn. Therefore, it's important to install yarn according to the [official guide](https://yarnpkg.com/getting-started/install).
 
-After installing yarn, you can install the dependencies.
+After installing yarn, make sure `yarn` is set to the newest version globally (this can be skipped, but recommended for compatibility).
+
+```bash
+# execute this outside the project dir
+yarn set version berry
+```
+
+Then execute the following command in project dir to install the dependencies.
 
 ```bash
 yarn install
@@ -30,6 +37,9 @@ Then you can run the development server.
 ```bash
 yarn dev
 ```
+
+> You may noticed that the setting up of `yarn` has much more steps. Yes, that's because we believe newer is better,
+> and in the same time `yarn` is more elegant. If you prefer a VERY quick setup, `npm` would be a better choice.
 
 ### Npm
 

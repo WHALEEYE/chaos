@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   authors: [{ name: siteConfig.author }],
   creator: siteConfig.author,
+  icons: {
+    icon: '/icons/favicon.svg',
+    apple: '/icons/favicon.svg',
+  },
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: 'website',

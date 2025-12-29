@@ -1,43 +1,31 @@
+'use client';
+
 import { ReactNode } from 'react';
 
+import { Footer } from './Footer';
 import { Header } from './Header';
-import { Sidebar } from './Sidebar';
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
-// Header height is h-14 (3.5rem = 56px)
-// Content top padding: pt-[calc(3.5rem+2rem)] = 5.5rem from top
-const HEADER_HEIGHT = '3.5rem';
-const CONTENT_GAP = '2rem';
+// Header height is h-16 (4rem = 64px)
+const HEADER_HEIGHT = '4rem';
+const CONTENT_GAP = '3rem';
 
 export function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
 
-      <div
-        className="mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8"
+      <main
+        className="mx-auto w-full max-w-4xl flex-1 px-6 pb-20 sm:px-8 lg:px-12"
         style={{ paddingTop: `calc(${HEADER_HEIGHT} + ${CONTENT_GAP})` }}
       >
-        <div className="grid gap-8 lg:grid-cols-[240px_1fr] lg:gap-12">
-          {/* Sidebar - Hidden on mobile, visible on lg+ */}
-          <div className="hidden lg:block">
-            <div className="sticky" style={{ top: `calc(${HEADER_HEIGHT} + ${CONTENT_GAP})` }}>
-              <Sidebar />
-            </div>
-          </div>
+        <div className="animate-fade-in">{children}</div>
+      </main>
 
-          {/* Mobile Sidebar - Visible on mobile, hidden on lg+ */}
-          <div className="lg:hidden">
-            <Sidebar />
-          </div>
-
-          {/* Main Content */}
-          <main className="min-w-0">{children}</main>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 }

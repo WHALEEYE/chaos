@@ -1,8 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { personalInfo, socialLinks } from '@/data/profile';
-import { Github, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 // Custom X icon (formerly Twitter)
 function XIcon({ className }: { className?: string }) {
@@ -37,6 +36,8 @@ function getSocialIcon(iconName: string, className: string) {
       return <XIcon className={className} />;
     case 'github':
       return <Github className={className} />;
+    case 'linkedin':
+      return <Linkedin className={className} />;
     case 'steam':
       return <SteamIcon className={className} />;
     case 'facebook':
@@ -46,63 +47,45 @@ function getSocialIcon(iconName: string, className: string) {
   }
 }
 
-export function Sidebar() {
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <aside className="flex flex-col gap-6">
-      {/* Avatar */}
-      <div className="relative aspect-square w-32 overflow-hidden rounded-2xl sm:w-40 lg:w-44">
-        <Image
-          src={personalInfo.avatar}
-          alt={personalInfo.name}
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+    <footer className="border-t border-border/40 bg-background/50">
+      <div className="mx-auto max-w-4xl px-6 py-10 sm:px-8 lg:px-12">
+        <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+          {/* Social Links */}
+          <div className="flex items-center gap-5">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-all duration-200 hover:text-primary hover:scale-110"
+                title={link.name}
+              >
+                {getSocialIcon(link.icon, 'h-5 w-5')}
+                <span className="sr-only">{link.name}</span>
+              </Link>
+            ))}
+            <span className="mx-1 h-5 w-px bg-border" />
+            <Link
+              href={`mailto:${personalInfo.email}`}
+              className="text-muted-foreground transition-all duration-200 hover:text-primary hover:scale-110"
+              title="Email"
+            >
+              <Mail className="h-5 w-5" />
+              <span className="sr-only">Email</span>
+            </Link>
+          </div>
 
-      {/* Name & Bio */}
-      <div className="space-y-1">
-        <h2 className="font-serif text-2xl font-bold tracking-tight">{personalInfo.name}</h2>
-        <p className="text-sm text-muted-foreground italic">{personalInfo.bio}</p>
+          {/* Copyright */}
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} {personalInfo.name}
+          </p>
+        </div>
       </div>
-
-      {/* Education */}
-      <div>
-        <p className="text-sm">
-          <Link
-            href="https://syntropix.ai"
-            className="underline decoration-muted-foreground/50 underline-offset-2 transition-colors hover:text-primary hover:decoration-primary"
-          >
-            {personalInfo.title}
-          </Link>
-        </p>
-      </div>
-
-      {/* Social Links */}
-      <div className="flex items-center gap-3">
-        {socialLinks.map((link) => (
-          <Link
-            key={link.name}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground transition-colors hover:text-primary"
-            title={link.name}
-          >
-            {getSocialIcon(link.icon, 'h-5 w-5')}
-            <span className="sr-only">{link.name}</span>
-          </Link>
-        ))}
-      </div>
-
-      {/* Contact */}
-      <Link
-        href={`mailto:${personalInfo.email}`}
-        className="inline-flex items-center gap-2 text-sm text-muted-foreground underline decoration-muted-foreground/50 underline-offset-2 transition-colors hover:text-primary hover:decoration-primary"
-      >
-        <Mail className="h-4 w-4" />
-        Contact Me
-      </Link>
-    </aside>
+    </footer>
   );
 }

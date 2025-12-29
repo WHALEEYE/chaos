@@ -133,67 +133,6 @@ export default function Home() {
             </li>
           </ul>
         </Showcase>
-
-        {/* About This Blog */}
-        <Showcase title="About This Site">
-          <p>
-            This site is built with{' '}
-            <Link
-              href="https://react.dev/"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              React
-            </Link>{' '}
-            +{' '}
-            <Link
-              href="https://nextjs.org/"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Next.js
-            </Link>{' '}
-            +{' '}
-            <Link
-              href="https://www.typescriptlang.org/"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TypeScript
-            </Link>
-            , styled with{' '}
-            <Link
-              href="https://tailwindcss.com/"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TailwindCSS
-            </Link>
-            , and hosted on{' '}
-            <Link
-              href="https://vercel.com/"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vercel
-            </Link>
-            . View the source on{' '}
-            <Link
-              href="https://github.com/WHALEEYE/chaos"
-              className="underline decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Link>
-            .
-          </p>
-        </Showcase>
       </div>
     </MainLayout>
   );

@@ -7,7 +7,7 @@ import { personalInfo, projects, publications } from '@/data/profile';
 import { ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Projects & Papers | CHAOS',
+  title: 'Projects & Publications | CHAOS',
   description: "Isaac Jin's projects and publications",
 };
 
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         {/* Page Header */}
         <section>
           <h1 className="font-serif text-3xl font-bold tracking-tight md:text-4xl">
-            Projects & Papers
+            Projects & Publications
           </h1>
           <p className="mt-3 text-base text-muted-foreground md:text-lg">
             A collection of my research publications and engineering projects. See my full{' '}
